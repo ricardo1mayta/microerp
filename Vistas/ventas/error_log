@@ -1,0 +1,47 @@
+[13-Aug-2016 07:45:59 UTC] PHP Fatal error:  Class 'Productos' not found in /home/perucell/public_html/sissmas/Vistas/ventas/productos.php on line 56
+[13-Aug-2016 07:48:38 UTC] PHP Warning:  include(../../Modelo/productos.php): failed to open stream: No such file or directory in /home/perucell/public_html/sissmas/Vistas/ventas/productos.php on line 4
+[13-Aug-2016 07:48:38 UTC] PHP Warning:  include(../../Modelo/productos.php): failed to open stream: No such file or directory in /home/perucell/public_html/sissmas/Vistas/ventas/productos.php on line 4
+[13-Aug-2016 07:48:38 UTC] PHP Warning:  include(): Failed opening '../../Modelo/productos.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/perucell/public_html/sissmas/Vistas/ventas/productos.php on line 4
+[13-Aug-2016 07:48:38 UTC] PHP Fatal error:  Class 'Productos' not found in /home/perucell/public_html/sissmas/Vistas/ventas/productos.php on line 27
+[13-Aug-2016 15:45:12 UTC] PHP Fatal error:  Call to undefined function get_idclientes() in /home/perucell/public_html/sissmas/Vistas/ventas/datoscliente.php on line 16
+[13-Aug-2016 15:46:02 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/perucell/public_html/sissmas/Vistas/ventas/datoscliente.php on line 17
+[13-Aug-2016 15:46:03 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/perucell/public_html/sissmas/Vistas/ventas/datoscliente.php on line 17
+[13-Aug-2016 15:46:04 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/perucell/public_html/sissmas/Vistas/ventas/datoscliente.php on line 17
+[13-Aug-2016 15:46:05 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/perucell/public_html/sissmas/Vistas/ventas/datoscliente.php on line 17
+[13-Aug-2016 15:46:17 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/perucell/public_html/sissmas/Vistas/ventas/datoscliente.php on line 17
+[13-Aug-2016 15:47:16 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/perucell/public_html/sissmas/Vistas/ventas/datoscliente.php on line 19
+[13-Aug-2016 16:59:08 UTC] PHP Fatal error:  Call to undefined method Ordenes::get_idclientes() in /home/perucell/public_html/sissmas/Vistas/ventas/datoscliente.php on line 55
+[15-Aug-2016 01:29:17 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/perucell/public_html/sissmas/Vistas/ventas/detorden.php on line 101
+[15-Aug-2016 01:31:46 UTC] PHP Fatal error:  Class 'Ordenes' not found in /home/perucell/public_html/sissmas/Vistas/ventas/detorden.php on line 14
+[15-Aug-2016 01:32:34 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/perucell/public_html/sissmas/Modelo/detordenes.php on line 29
+[15-Aug-2016 01:37:57 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/perucell/public_html/sissmas/Modelo/detordenes.php on line 29
+[15-Aug-2016 01:39:01 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/perucell/public_html/sissmas/Vistas/ventas/detorden.php on line 34
+[15-Aug-2016 01:39:44 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/perucell/public_html/sissmas/Vistas/ventas/detorden.php on line 34
+[15-Aug-2016 02:46:26 UTC] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/perucell/public_html/sissmas/Vistas/ventas/detorden.php on line 24
+[18-Aug-2016 05:33:51 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/perucell/public_html/sissmas/Modelo/ordenes.php on line 18
+[18-Aug-2016 05:42:53 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/perucell/public_html/sissmas/Modelo/ordenes.php on line 18
+[18-Aug-2016 06:03:05 UTC] PHP Fatal error:  Call to undefined method Clientes::get_cliorden() in /home/perucell/public_html/sissmas/Vistas/ventas/datoscliente.php on line 19
+[18-Aug-2016 06:03:05 UTC] PHP Fatal error:  Call to undefined method Clientes::get_cliorden() in /home/perucell/public_html/sissmas/Vistas/ventas/datoscliente.php on line 19
+[18-Aug-2016 06:07:15 UTC] PHP Fatal error:  Call to undefined method Clientes::get_cliorden() in /home/perucell/public_html/sissmas/Vistas/ventas/datoscliente.php on line 20
+[18-Aug-2016 06:07:33 UTC] PHP Fatal error:  Call to undefined method Clientes::get_cliorden() in /home/perucell/public_html/sissmas/Vistas/ventas/datoscliente.php on line 20
+[20-Aug-2016 04:44:09 UTC] PHP Parse error:  syntax error, unexpected ')', expecting '&' or variable (T_VARIABLE) in /home/perucell/public_html/sissmas/Modelo/detordenes.php on line 34
+[20-Aug-2016 04:45:38 UTC] PHP Fatal error:  Class 'Ordenes' not found in /home/perucell/public_html/sissmas/Vistas/ventas/editadetalle.php on line 15
+[21-Aug-2016 18:45:04 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/perucell/public_html/sissmas/Modelo/detordenes.php on line 38
+[21-Aug-2016 18:45:04 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/perucell/public_html/sissmas/Modelo/detordenes.php on line 38
+[21-Aug-2016 18:45:15 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/perucell/public_html/sissmas/Modelo/detordenes.php on line 38
+[21-Aug-2016 18:47:04 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/perucell/public_html/sissmas/Modelo/detordenes.php on line 38
+[21-Aug-2016 18:47:04 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/perucell/public_html/sissmas/Modelo/detordenes.php on line 38
+[21-Aug-2016 18:47:12 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/perucell/public_html/sissmas/Modelo/detordenes.php on line 38
+[21-Aug-2016 18:47:47 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/perucell/public_html/sissmas/Modelo/detordenes.php on line 38
+[21-Aug-2016 18:48:18 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/perucell/public_html/sissmas/Modelo/detordenes.php on line 38
+[24-Aug-2016 06:54:42 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/perucell/public_html/sissmas/Modelo/ordenes.php on line 29
+[24-Aug-2016 06:56:14 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/perucell/public_html/sissmas/Modelo/ordenes.php on line 29
+[24-Aug-2016 06:59:37 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/perucell/public_html/sissmas/Modelo/ordenes.php on line 29
+[24-Aug-2016 07:00:05 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/perucell/public_html/sissmas/Modelo/ordenes.php on line 29
+[24-Aug-2016 07:22:50 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/perucell/public_html/sissmas/Modelo/ordenes.php on line 29
+[24-Aug-2016 07:24:42 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/perucell/public_html/sissmas/Modelo/ordenes.php on line 29
+[24-Aug-2016 07:24:49 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/perucell/public_html/sissmas/Modelo/ordenes.php on line 29
+[24-Aug-2016 07:24:52 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/perucell/public_html/sissmas/Modelo/ordenes.php on line 29
+[24-Aug-2016 07:25:00 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/perucell/public_html/sissmas/Modelo/ordenes.php on line 29
+[25-Aug-2016 03:27:27 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/perucell/public_html/sissmas/Modelo/ordenes.php on line 29
+[25-Aug-2016 03:29:52 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/perucell/public_html/sissmas/Modelo/ordenes.php on line 29

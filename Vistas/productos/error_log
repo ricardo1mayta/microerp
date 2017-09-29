@@ -1,0 +1,53 @@
+[10-Nov-2016 15:34:45 America/Lima] PHP Fatal error:  Class 'Parametros' not found in /home/grupodig/public_html/sys/Vistas/productos/selec2_marca.php on line 8
+[10-Nov-2016 15:36:14 America/Lima] PHP Fatal error:  Class 'DB_Class' not found in /home/grupodig/public_html/sys/Modelo/parametros.php on line 9
+[10-Nov-2016 15:36:17 America/Lima] PHP Fatal error:  Class 'DB_Class' not found in /home/grupodig/public_html/sys/Modelo/parametros.php on line 9
+[10-Nov-2016 15:39:30 America/Lima] PHP Fatal error:  Class 'Parametros' not found in /home/grupodig/public_html/sys/Vistas/productos/selec2_marca.php on line 9
+[10-Nov-2016 15:42:05 America/Lima] PHP Fatal error:  Class 'DB_Class' not found in /home/grupodig/public_html/sys/Modelo/parametros.php on line 9
+[10-Nov-2016 15:42:10 America/Lima] PHP Fatal error:  Class 'DB_Class' not found in /home/grupodig/public_html/sys/Modelo/parametros.php on line 9
+[10-Nov-2016 15:42:15 America/Lima] PHP Fatal error:  Class 'DB_Class' not found in /home/grupodig/public_html/sys/Modelo/parametros.php on line 9
+[10-Nov-2016 15:42:44 America/Lima] PHP Fatal error:  Class 'DB_Class' not found in /home/grupodig/public_html/sys/Modelo/parametros.php on line 9
+[10-Nov-2016 15:48:06 America/Lima] PHP Fatal error:  Class 'DB_Class' not found in /home/grupodig/public_html/sys/Modelo/parametros.php on line 9
+[10-Nov-2016 15:58:30 America/Lima] PHP Fatal error:  Class 'Conexion' not found in /home/grupodig/public_html/sys/Modelo/parametros.php on line 12
+[10-Nov-2016 15:59:23 America/Lima] PHP Fatal error:  Class 'Conexion' not found in /home/grupodig/public_html/sys/Modelo/parametros.php on line 12
+[10-Nov-2016 16:00:08 America/Lima] PHP Fatal error:  Class 'Conexion' not found in /home/grupodig/public_html/sys/Modelo/parametros.php on line 12
+[10-Nov-2016 16:00:52 America/Lima] PHP Fatal error:  Class 'Conexion' not found in /home/grupodig/public_html/sys/Modelo/parametros.php on line 12
+[10-Nov-2016 16:00:59 America/Lima] PHP Fatal error:  Class 'Conexion' not found in /home/grupodig/public_html/sys/Modelo/parametros.php on line 12
+[10-Nov-2016 16:16:27 America/Lima] PHP Fatal error:  Class 'Parametros' not found in /home/grupodig/public_html/sys/Vistas/productos/selec2_marca.php on line 9
+[10-Nov-2016 16:16:43 America/Lima] PHP Fatal error:  Class 'Parametros' not found in /home/grupodig/public_html/sys/Vistas/productos/selec2_marca.php on line 9
+[10-Nov-2016 16:17:01 America/Lima] PHP Fatal error:  Class 'Parametros' not found in /home/grupodig/public_html/sys/Vistas/productos/selec2_marca.php on line 10
+[10-Nov-2016 16:17:34 America/Lima] PHP Fatal error:  Class 'Parametros' not found in /home/grupodig/public_html/sys/Vistas/productos/selec2_marca.php on line 10
+[10-Nov-2016 16:18:32 America/Lima] PHP Fatal error:  Class 'Conexion' not found in /home/grupodig/public_html/sys/Modelo/parametros.php on line 9
+[10-Nov-2016 16:19:38 America/Lima] PHP Fatal error:  Class 'Conexionn' not found in /home/grupodig/public_html/sys/Modelo/parametros.php on line 9
+[10-Nov-2016 16:20:29 America/Lima] PHP Fatal error:  Class 'Conexion' not found in /home/grupodig/public_html/sys/Modelo/parametros.php on line 9
+[10-Nov-2016 16:20:29 America/Lima] PHP Fatal error:  Class 'Conexion' not found in /home/grupodig/public_html/sys/Modelo/parametros.php on line 9
+[10-Nov-2016 16:27:12 America/Lima] PHP Fatal error:  Class 'Conexion' not found in /home/grupodig/public_html/sys/Modelo/parametros.php on line 9
+[10-Nov-2016 16:37:37 America/Lima] PHP Fatal error:  Class 'Conexion' not found in /home/grupodig/public_html/sys/Modelo/parametros.php on line 9
+[10-Nov-2016 16:37:41 America/Lima] PHP Fatal error:  Class 'Conexion' not found in /home/grupodig/public_html/sys/Modelo/parametros.php on line 9
+[10-Nov-2016 16:38:00 America/Lima] PHP Fatal error:  Class 'Conexion' not found in /home/grupodig/public_html/sys/Modelo/parametros.php on line 9
+[10-Nov-2016 16:38:26 America/Lima] PHP Fatal error:  Class 'Conexion' not found in /home/grupodig/public_html/sys/Modelo/parametros.php on line 9
+[10-Nov-2016 16:38:42 America/Lima] PHP Fatal error:  Class 'Conexion' not found in /home/grupodig/public_html/sys/Modelo/parametros.php on line 9
+[10-Nov-2016 16:40:41 America/Lima] PHP Fatal error:  Class 'Conexion' not found in /home/grupodig/public_html/sys/Modelo/parametros.php on line 9
+[10-Nov-2016 16:41:09 America/Lima] PHP Fatal error:  Class 'Conexion' not found in /home/grupodig/public_html/sys/Modelo/parametros.php on line 9
+[10-Nov-2016 16:41:54 America/Lima] PHP Fatal error:  Class 'Parametros' not found in /home/grupodig/public_html/sys/Vistas/productos/selec2_marca.php on line 9
+[10-Nov-2016 16:41:59 America/Lima] PHP Fatal error:  Class 'Parametros' not found in /home/grupodig/public_html/sys/Vistas/productos/selec2_marca.php on line 9
+[10-Nov-2016 16:42:03 America/Lima] PHP Fatal error:  Class 'Parametros' not found in /home/grupodig/public_html/sys/Vistas/productos/selec2_marca.php on line 9
+[10-Nov-2016 16:42:16 America/Lima] PHP Fatal error:  Class 'Parametros' not found in /home/grupodig/public_html/sys/Vistas/productos/selec2_marca.php on line 9
+[10-Nov-2016 16:43:01 America/Lima] PHP Fatal error:  Class 'Conexion' not found in /home/grupodig/public_html/sys/Modelo/parametros.php on line 9
+[10-Nov-2016 16:43:14 America/Lima] PHP Fatal error:  Class 'Parametros' not found in /home/grupodig/public_html/sys/Vistas/productos/selec2_marca.php on line 9
+[10-Nov-2016 16:43:17 America/Lima] PHP Fatal error:  Class 'Parametros' not found in /home/grupodig/public_html/sys/Vistas/productos/selec2_marca.php on line 9
+[10-Nov-2016 16:43:20 America/Lima] PHP Fatal error:  Class 'Parametros' not found in /home/grupodig/public_html/sys/Vistas/productos/selec2_marca.php on line 9
+[10-Nov-2016 16:43:54 America/Lima] PHP Fatal error:  Class 'Conexion' not found in /home/grupodig/public_html/sys/Modelo/parametros.php on line 9
+[10-Nov-2016 16:43:56 America/Lima] PHP Fatal error:  Class 'Conexion' not found in /home/grupodig/public_html/sys/Modelo/parametros.php on line 9
+[10-Nov-2016 16:45:08 America/Lima] PHP Warning:  include(Modelo/parametros.php): failed to open stream: No such file or directory in /home/grupodig/public_html/sys/Vistas/productos/selec2_marca.php on line 1
+[10-Nov-2016 16:45:08 America/Lima] PHP Warning:  include(Modelo/parametros.php): failed to open stream: No such file or directory in /home/grupodig/public_html/sys/Vistas/productos/selec2_marca.php on line 1
+[10-Nov-2016 16:45:08 America/Lima] PHP Warning:  include(): Failed opening 'Modelo/parametros.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/grupodig/public_html/sys/Vistas/productos/selec2_marca.php on line 1
+[10-Nov-2016 16:45:08 America/Lima] PHP Fatal error:  Class 'Parametros' not found in /home/grupodig/public_html/sys/Vistas/productos/selec2_marca.php on line 9
+[10-Nov-2016 16:45:16 America/Lima] PHP Fatal error:  Class 'Conexion' not found in /home/grupodig/public_html/sys/Modelo/parametros.php on line 9
+[10-Nov-2016 16:46:30 America/Lima] PHP Fatal error:  Class 'Conexion' not found in /home/grupodig/public_html/sys/Modelo/parametros.php on line 9
+[10-Nov-2016 17:01:53 America/Lima] PHP Fatal error:  Class 'Conexion' not found in /home/grupodig/public_html/sys/Modelo/parametros.php on line 9
+[22-Nov-2016 11:38:51 America/Lima] PHP Fatal error:  Class 'Producto' not found in /home/grupodig/public_html/sys/Vistas/productos/select3_producto.php on line 12
+[22-Nov-2016 11:41:01 America/Lima] PHP Fatal error:  Class 'Producto' not found in /home/grupodig/public_html/sys/Vistas/productos/select3_producto.php on line 12
+[22-Nov-2016 11:41:55 America/Lima] PHP Warning:  include(../../Modelo/producto.php): failed to open stream: No such file or directory in /home/grupodig/public_html/sys/Vistas/productos/select3_producto.php on line 4
+[22-Nov-2016 11:41:55 America/Lima] PHP Warning:  include(../../Modelo/producto.php): failed to open stream: No such file or directory in /home/grupodig/public_html/sys/Vistas/productos/select3_producto.php on line 4
+[22-Nov-2016 11:41:55 America/Lima] PHP Warning:  include(): Failed opening '../../Modelo/producto.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/grupodig/public_html/sys/Vistas/productos/select3_producto.php on line 4
+[22-Nov-2016 11:41:55 America/Lima] PHP Fatal error:  Class 'Productos' not found in /home/grupodig/public_html/sys/Vistas/productos/select3_producto.php on line 12

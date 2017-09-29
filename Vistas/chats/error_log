@@ -1,0 +1,10 @@
+[17-Apr-2017 13:48:30 America/Lima] PHP Parse error:  syntax error, unexpected '30' (T_LNUMBER), expecting ',' or ';' in /home/grupodig/public_html/sys/Vistas/chats/cargar-mensages.php on line 12
+[17-Apr-2017 13:48:45 America/Lima] PHP Parse error:  syntax error, unexpected '30' (T_LNUMBER), expecting ',' or ';' in /home/grupodig/public_html/sys/Vistas/chats/cargar-mensages.php on line 12
+[17-Apr-2017 14:00:26 America/Lima] PHP Fatal error:  Cannot use object of type mysqli_result as array in /home/grupodig/public_html/sys/Vistas/chats/cargar-mensages.php on line 12
+[17-Apr-2017 14:00:41 America/Lima] PHP Fatal error:  Cannot use object of type mysqli_result as array in /home/grupodig/public_html/sys/Vistas/chats/cargar-mensages.php on line 12
+[17-Apr-2017 14:00:56 America/Lima] PHP Fatal error:  Cannot use object of type mysqli_result as array in /home/grupodig/public_html/sys/Vistas/chats/cargar-mensages.php on line 12
+[17-Apr-2017 14:01:11 America/Lima] PHP Fatal error:  Cannot use object of type mysqli_result as array in /home/grupodig/public_html/sys/Vistas/chats/cargar-mensages.php on line 12
+[17-Apr-2017 14:01:26 America/Lima] PHP Fatal error:  Cannot use object of type mysqli_result as array in /home/grupodig/public_html/sys/Vistas/chats/cargar-mensages.php on line 12
+[17-Apr-2017 14:01:41 America/Lima] PHP Fatal error:  Cannot use object of type mysqli_result as array in /home/grupodig/public_html/sys/Vistas/chats/cargar-mensages.php on line 12
+[17-Apr-2017 17:15:04 America/Lima] PHP Fatal error:  Cannot use object of type mysqli_result as array in /home/grupodig/public_html/sys/Vistas/chats/inserta-mensage.php on line 34
+[18-Apr-2017 11:05:48 America/Lima] PHP Fatal error:  Class 'Chat' not found in /home/grupodig/public_html/sys/Vistas/chats/cargar-mensages.php on line 9
