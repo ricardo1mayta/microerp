@@ -26,7 +26,7 @@ $login = $us->check_login($email, $pass);
 } else{
 		$use = new User();
  		
-    	//$u=$use->user_salida($user['US_C_CODIGO']);
+    	$u=$use->user_salida($user['US_C_CODIGO']);
         //echo "usuario:".$u[0];
 include(HTML_DIR .'login/login.php');
 session_destroy();

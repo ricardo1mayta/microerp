@@ -2,13 +2,7 @@
 
 $v=new Permisos();
 if(isset($_GET['view'])) {
-	if (isset($user['US_C_CODIGO'])){
-		$vis=$v->chexview($user['US_C_CODIGO'],$_GET['view']);
-	} else
-	{
-		$vis="";
-	}
-
+$vis=$v->chexview($user['US_C_CODIGO'],$_GET['view']);
 $activ=$_GET['view'];
 	if($vis==$_GET['view']){
 

@@ -1,8 +1,10 @@
-<?php session_start();
-if (isset($_SESSION['usuario'])){
-	$user=$_SESSION['usuario'];
-}
- 
+<?php
+/*
+  EL NÚCLEO DE LA APLICACIÓN!
+*/
+
+session_start();
+ $user=$_SESSION['usuario'];
  
  date_default_timezone_set('America/Caracas');
 
