@@ -4,7 +4,7 @@ if(isset($_SESSION['usuario'])) {
 	if(!empty($_POST['evento']))
 		{
 
-			echo $evento=$_POST['evento'];
+			$evento=$_POST['evento'];
 
 			switch ($evento) {
 
@@ -33,7 +33,7 @@ if(isset($_SESSION['usuario'])) {
 										  // $url="../Vistas/registro_secciones.php?nom=".$nomproy;
 										$sms='<div id="mensage" class="alert alert-success alert-dismissible">
 			                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-			                            <h4><i class="icon fa fa-check"></i>'.$p['sms'].' </h4>'.$ms.' Sin Problemas, Gracias.</div>';
+			                            <h4><i class="icon fa fa-check"></i>'.$p['sms'].' </h4> Sin Problemas, Gracias.</div>';
 			                            //include(HTML_DIR .'agenda/ical.php');
 									}
 									else{

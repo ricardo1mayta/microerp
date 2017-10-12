@@ -20,10 +20,10 @@ include("../../Modelo/pedidos/detallepedidos.php"); ?>
        </td>
        <td  >
        
-       <span id="f<?=$lista['DPE_C_CODIGO']?>"><?php echo money_format('%.2n',  round($lista['DPE_N_PRECIO'], 2));  ?></span>
+       <span id="f<?=$lista['DPE_C_CODIGO']?>"><?php echo"$ ".number_format(round($lista['DPE_N_PRECIO'], 2),2);  ?></span>
 
        </td>
-       <td  ><?php echo money_format('%.2n',  round($lista['SUB_TOTAL'], 2)); ?></td>
+       <td  ><?php echo "$ ".number_format(round($lista['SUB_TOTAL'], 2),2); ?></td>
        
        
 
@@ -31,5 +31,5 @@ include("../../Modelo/pedidos/detallepedidos.php"); ?>
      <?php } ?>
       <tr class=" bg-gray">
       <td colspan="4" ><span class="pull-right"> Total:</span></td>
-      <td colspan="3" ><?php echo money_format('%.2n', round($total, 2)); ?></td>
+      <td colspan="3" ><?php echo "$ ".number_format(round($total, 2),2); ?></td>
       </tr>

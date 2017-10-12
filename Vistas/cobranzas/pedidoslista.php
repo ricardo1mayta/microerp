@@ -14,9 +14,9 @@ $p = new Pedidos();
        <td><?php echo 'PED-'. substr(('00000000'.$lista[0]), -8,8); ?></td>
        <td><?php echo $lista[1] ?></td>
        <td><?php echo $lista[2] ?></td>
-       <td><?php echo money_format('%.2n',  round($lista['TOTAL'], 2));  ?></td>
+       <td><?php echo "$ ".number_format(round($lista['TOTAL'], 2),2);  ?></td>
 
-       <td  onclick="verdetallepedido(<?=$lista[0]?>,<?=$lista[0]?>,'<?=$lista[1]?>')"><i class="fa fa-mail-forward"   data-toggle="tooltip" title="Detalle"></i></td>
+       <td  onclick="verdetallepedido(<?=$lista[0]?>,<?=$lista[0]?>,'<?=$lista[1]?>')"><i class="fa fa-mail-forward" data-toggle="modal" data-target="#detallepedido"  data-toggle="tooltip" title="Detalle"></i></td>
        <td><label class="">
         <input type="checkbox" value="3" onChange="" >Orden Pedido</label><br>
         <label class="">

@@ -125,7 +125,27 @@ var user=0;
              });
 
 }
-// With JQuery
+function requisitos(){
+var user=0;
+   
+      var url="../Vistas/cobranzas/requisitos.php";
+    //$('#tablajson tbody').html('');
+        $.ajax({
+               type: "GET",
+               url: url,
+               data: {u:user}, // Adjuntar los campos del formulario enviado.
+                          
+               success: function(data)
+               {
+                   //$("#respuesta").html(data); // Mostrar la respuestas del script PHP.
+                    $('#tablajson tbody').html(data);
+                  
+
+                     
+               }
+             });
+
+}
 
 
 </script>
@@ -148,7 +168,7 @@ var user=0;
       <div class="row">
       
         <!-- left column -->
-        <div class="col-md-6">
+        <div class="col-md-12">
                       
           <!-- general form elements disabled -->
           <div class="box box-warning">
@@ -186,13 +206,24 @@ var user=0;
         <div class="col-md-6">
                       
           <!-- general form elements disabled -->
-          <div class="box box-warning">
+         
+        </div>
+       
+        
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+ 
+<div  class="modal " id="detallepedido" tabindex="-1" role="dialog"  >
+  <div class="modal-dialog "  >
+    <div class="modal-content " style="border-radius: 15px; padding: 5px 5px 5px 5px"> 
+      <div class="modal-body" >
+      <div class="box box-warning">
             <div class="box-header with-border">
               <h3 class="box-title">Datos de Productos</h3>
-              <div class="box-tools pull-right">              
-               <button type="button" class="btn btn-box-tool"  data-widget="collapse"><i class="fa fa-minus"></i> </button>
-                <button type="button" class="btn btn-box-tool"  data-widget="remove"><i class="fa fa-remove"></i></button>
-              </div>             
+                          
             </div>
             <div class="box-body">
              <center><h2 id="nombreempresa"></h2></center>
@@ -206,7 +237,6 @@ var user=0;
                     <th>Precio</th>
                     <th>Sub-Total</th>
                     
-                                           
                   </thead>
                   <tbody>
                     
@@ -219,24 +249,10 @@ var user=0;
             </div>
               
           </div>
-        </div>
-       
-        
-      </div>
-      <!-- /.row -->
-    </section>
-    <!-- /.content -->
-  </div>
- 
-<div  class="modal " id="alertas" tabindex="-1" role="dialog"  >
-  <div class="modal-dialog "  >
-    <div class="modal-content " style="border-radius: 15px; padding: 5px 5px 5px 5px"> 
-      <div class="modal-body" >
-      <center><h5 id="mensaje">Error</h5></center>
       </div> 
     </div>
   </div>
-</div>            <!-- /.box-body -->
+</div>                         <!-- /.box-body -->
  <?php include_once(HTML_DIR . '/template/footer.php'); ?>
 
 <?php include_once(HTML_DIR . '/template/ajustes_generales.php'); ?>

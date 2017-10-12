@@ -9,8 +9,8 @@
 						      
 						  	$categoria=$pro->get_contactosempresa($idemp);
 		                        while($row=$categoria->fetch_array()){
-                         	$codigo=$row[0];
-						    $nombre=$row[1];
+                         	$codigo=$row['CON_C_CODIGO'];
+						    $nombre=$row['NOMBRE'];
 						    ?>
 						      <option value="<?php echo $codigo;?>"><?php echo  $nombre;?></option>
 						    <?php

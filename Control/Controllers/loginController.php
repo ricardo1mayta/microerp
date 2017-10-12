@@ -16,7 +16,7 @@ $login = $us->check_login($email, $pass);
         
     if ($login>0) {
     
-        echo "<script language=Javascript> location.href=\"principal/\"; </script>";
+        echo "<script language=Javascript> location.href=\"./principal/\"; </script>";
     } else {
         
  	echo "<script language=Javascript> location.href=\"\"; </script>";
@@ -26,7 +26,7 @@ $login = $us->check_login($email, $pass);
 } else{
 		$use = new User();
  		
-    	$u=$use->user_salida($user['US_C_CODIGO']);
+    	//$u=$use->user_salida($user['US_C_CODIGO']);
         //echo "usuario:".$u[0];
 include(HTML_DIR .'login/login.php');
 session_destroy();

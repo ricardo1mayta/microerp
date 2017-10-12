@@ -22,9 +22,16 @@ public function __construct()
     }
 public function get_allEmpresas12($txt,$ini,$intervalo,$us) 
     {
-        $sql = "SELECT e.EMP_C_CODIGO,c.PAR_C_CODIGO,e.EMP_C_RUC,e.EMP_D_RAZONSOCIAL,e.EMP_D_NOMBRECOMERCIAL,empresalibre(e.EMP_C_CODIGO,36) AS MINERIA, empresalibre(e.EMP_C_CODIGO,39) AS CONSTRUCCION 
+      $sql = "SELECT e.EMP_C_CODIGO,c.PAR_C_CODIGO,e.EMP_C_RUC,e.EMP_D_RAZONSOCIAL,e.EMP_D_NOMBRECOMERCIAL,empresalibre(e.EMP_C_CODIGO,36) AS MINERIA, empresalibre(e.EMP_C_CODIGO,39) AS CONSTRUCCION 
          FROM dg_cartera c INNER JOIN dg_empresas e on c.EMP_C_CODIGO=e.EMP_C_CODIGO WHERE c.US_C_CODIGO='$us' AND e.EMP_E_ESTADO>0 
 and concat(e.EMP_C_RUC,' ',e.EMP_D_RAZONSOCIAL,' ',e.EMP_D_NOMBRECOMERCIAL) LIKE '%".$txt."%' GROUP BY e.EMP_C_CODIGO ORDER BY e.EMP_C_CODIGO DESC limit $ini,$intervalo; ";
+         $rows=$this->db->query($sql);  
+        return $rows;
+    }
+    public function get_empresaNombre($txt,$us)
+    {
+        $sql = "SELECT e.EMP_C_CODIGO,c.PAR_C_CODIGO,e.EMP_C_RUC,e.EMP_D_RAZONSOCIAL,e.EMP_D_NOMBRECOMERCIAL FROM dg_cartera c INNER JOIN dg_empresas e on c.EMP_C_CODIGO=e.EMP_C_CODIGO WHERE c.US_C_CODIGO='$us' AND e.EMP_E_ESTADO>0
+ and concat(e.EMP_D_RAZONSOCIAL,' ',e.EMP_D_NOMBRECOMERCIAL) LIKE '%YANA%' GROUP BY e.EMP_C_CODIGO ORDER BY e.EMP_C_CODIGO DESC limit 10;";
          $rows=$this->db->query($sql);  
         return $rows;
     }
@@ -47,7 +54,7 @@ and concat(e.EMP_C_RUC,' ',e.EMP_D_RAZONSOCIAL,' ',e.EMP_D_NOMBRECOMERCIAL) LIKE
     }
     public function get_allEmpresas123($ini,$intervalo,$us) 
     {
-        $sql = "SELECT e.EMP_C_CODIGO,c.PAR_C_CODIGO,e.EMP_C_RUC,e.EMP_D_RAZONSOCIAL,e.EMP_D_NOMBRECOMERCIAL,empresalibre(e.EMP_C_CODIGO,36) AS MINERIA, empresalibre(e.EMP_C_CODIGO,39) AS CONSTRUCCION
+        echo $sql = "SELECT e.EMP_C_CODIGO,c.PAR_C_CODIGO,e.EMP_C_RUC,e.EMP_D_RAZONSOCIAL,e.EMP_D_NOMBRECOMERCIAL,empresalibre(e.EMP_C_CODIGO,36) AS MINERIA, empresalibre(e.EMP_C_CODIGO,39) AS CONSTRUCCION
          FROM dg_cartera c INNER JOIN dg_empresas e on c.EMP_C_CODIGO=e.EMP_C_CODIGO WHERE c.US_C_CODIGO='$us' AND c.CAR_E_ESTADO>0 GROUP BY e.EMP_C_CODIGO ORDER BY e.EMP_C_CODIGO DESC limit $ini,$intervalo; ";
          $rows=$this->db->query($sql);  
         return $rows;

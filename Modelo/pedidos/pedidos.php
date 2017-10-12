@@ -45,10 +45,18 @@ and concat(e.EMP_C_RUC,' ',e.EMP_D_RAZONSOCIAL,' ',e.EMP_D_NOMBRECOMERCIAL) LIKE
                 $rows=$this->db->query($sql);  
                 return $rows;
     }
-     public function get_pedidos($us) 
+     public function get_pedidos($us,$e) 
     {
-                $sql="SELECT p.PED_C_CODIGO,c.EMP_D_RAZONSOCIAL,c.EMP_C_RUC,(SELECT SUM(DPE_N_CANTIDAD*DPE_N_PRECIO) FROM dg_detallepedidos where PED_C_CODIGO=p.PED_C_CODIGO) AS TOTAL from dg_pedidos p
-INNER JOIN dg_empresas c on c.EMP_C_CODIGO=p.EMP_C_CODIGO where p.US_C_CODIGO='$us' AND p.PED_E_ESTADO>0; ";
+                $sql="SELECT p.PED_C_CODIGO,c.EMP_D_RAZONSOCIAL,c.EMP_C_RUC,(SELECT SUM(DPE_N_CANTIDAD*DPE_N_PRECIO) FROM dg_detallepedidos where PED_C_CODIGO=p.PED_C_CODIGO) AS TOTAL,p.PED_E_ESTADO from dg_pedidos p
+INNER JOIN dg_empresas c on c.EMP_C_CODIGO=p.EMP_C_CODIGO where p.US_C_CODIGO='$us' AND p.PED_E_ESTADO='$e'; ";
+                $rows=$this->db->query($sql);  
+                return $rows;
+
+    }
+     public function get_pedidosall($us) 
+    {
+                $sql="SELECT p.PED_C_CODIGO,c.EMP_D_RAZONSOCIAL,c.EMP_C_RUC,(SELECT SUM(DPE_N_CANTIDAD*DPE_N_PRECIO) FROM dg_detallepedidos where PED_C_CODIGO=p.PED_C_CODIGO) AS TOTAL,p.PED_E_ESTADO from dg_pedidos p
+INNER JOIN dg_empresas c on c.EMP_C_CODIGO=p.EMP_C_CODIGO where p.US_C_CODIGO='$us' order by p.PED_C_CODIGO desc limit 200;";
                 $rows=$this->db->query($sql);  
                 return $rows;
 
@@ -72,6 +80,14 @@ INNER JOIN dg_empresas c on c.EMP_C_CODIGO=p.EMP_C_CODIGO where   p.PED_E_ESTADO
 public function validar_pedidos($ped,$us,$e,$obs) 
     {
                 $sql="call spv_validar_pedido('$ped','$us','$e','$obs');";
+                $rows=$this->db->query($sql); 
+                 $result=$rows->fetch_array(); 
+                return $result;
+
+    }
+    public function valida_pedido($idped,$u,$arch) 
+    {
+                $sql="call spv_valida_pedidoporcorreo('$idped','$arch','$u')";
                 $rows=$this->db->query($sql); 
                  $result=$rows->fetch_array(); 
                 return $result;

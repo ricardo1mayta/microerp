@@ -46,7 +46,7 @@
   <div class="login-box-body login">
     <p class="login-box-msg">Iniciar Sesión </p>
 
-    <form action="http://grupodigamma.com/sys/" method="post">
+    <form action="" method="post">
       <div class="form-group has-feedback">
         <input type="email" class="form-control" name="email" placeholder="Correo">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>

@@ -81,7 +81,7 @@ inner join dg_user u on u.US_C_CODIGO=c.US_C_CODIGO WHERE c.EMP_C_CODIGO='$idemp
 
      public function get_contactosempresa($idemp) 
     {
-        $sql = "SELECT ca.CAR_C_CODIGO,c.CON_C_CODIGO,c.CON_D_NOMBRE,c.CON_D_APELLIDO,ca.CAR_D_NOMBRE, CONCAT(c.CON_D_TRATADO,' ',c.CON_D_NOMBRE,' ',c.CON_D_APELLIDO,' - ',ca.CAR_D_NOMBRE) as NOMBRE,c.CON_D_DIRECCION FROM  dg_detalleempresacontactos dc
+       echo  $sql = "SELECT ca.CAR_C_CODIGO,c.CON_C_CODIGO,c.CON_D_NOMBRE,c.CON_D_APELLIDO,ca.CAR_D_NOMBRE, CONCAT(c.CON_D_TRATADO,' ',c.CON_D_NOMBRE,' ',c.CON_D_APELLIDO,' - ',ca.CAR_D_NOMBRE) as NOMBRE,c.CON_D_DIRECCION FROM  dg_detalleempresacontactos dc
 INNER JOIN dg_contactos c ON c.CON_C_CODIGO=dc.CON_C_CODIGO
 INNER JOIN dg_cargos ca on ca.CAR_C_CODIGO=c.CAR_C_CODIGO
  where dc.EMP_C_CODIGO='$idemp' and c.CON_E_ESTADO>0; ";

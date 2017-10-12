@@ -4,7 +4,7 @@
 <?php 
 	 $pro = new Agenda();              
 	 	$events = array();
-	 	$tex=$_REQUEST['u'];
+	 	
 		 $categoria=$pro->get_allagendaus($usuario['US_C_CODIGO']);
 	 	    while($row=$categoria->fetch_array())
 	          {
@@ -101,27 +101,10 @@ function rep(){
 
       <div class="row">
         <div class="col-md-3">
-           <div class="box box-default ">
-            <div class="box-header with-border">
-              <h3 class="box-title">Agregar Eventos</h3>
-
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
-                </button>
-              </div>
-              <!-- /.box-tools -->
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-	          		
-            
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
-          <!-- /. box -->
+                      
           <div class="box box-default ">
             <div class="box-header with-border">
-              <h3 class="box-title">Eventos Urgentes</h3>
+              <h3 class="box-title">Eventos Pasados</h3>
 
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
@@ -133,20 +116,47 @@ function rep(){
             <div class="box-body">
             <?php $a=new Agenda();
 
-            	$ag=$a->get_allsinfinalizar($idus); 
+            	$ag=$a->get_allsinfinalizar($usuario['US_C_CODIGO']); 
 					while($row=$ag->fetch_array())
           		{
             	?>
-              	<div class="external-event" style="background-color:<?php echo $row['AGE_C_COLOR'];?> "><?php echo $row['AGE_DESCRIPCION']." - ".$row['AGE_F_FECHAFIN'];?></div>
+              	<div class="external-event" style="background-color:<?php echo $row['AGE_C_COLOR'];?>;color:white; "><?php echo $row['AGE_DESCRIPCION']." - ".$row['AGE_F_FECHAFIN'];?></div>
+               	<form action="../listarAgenda/" method="POST"> 
+			         <input type="hidden" name="codigo" value="<?=$row['EMP_C_CODIGO']?>">
+			         <input type="submit" class="btn btn-info btn-xs" value="ver">
+		         </form>
+                <?php } ?>
+                
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <div class="box box-default ">
+            <div class="box-header with-border">
+              <h3 class="box-title">Eventos Programados</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+                </button>
+              </div>
+              <!-- /.box-tools -->
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+            <?php $a=new Agenda();
+
+            	$ag=$a->get_programados($usuario['US_C_CODIGO']); 
+					while($row=$ag->fetch_array())
+          		{
+            	?>
+              	<div class="external-event" style="background-color:<?php echo $row['AGE_C_COLOR'];?>;color:white; "><?php echo $row['AGE_DESCRIPCION']." - ".$row['AGE_F_FECHAFIN'];?></div>
                
                 <?php } ?>
             </div>
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
-         </div> 
-         </div>
-            <div class="col-md-9">
+         </div>          
+         <div class="col-md-9">
 	          <div class="box box-primary">
 	            <div class="box-body no-padding">
 	              <!-- THE CALENDAR -->
@@ -159,6 +169,7 @@ function rep(){
         	</div>
         <!-- /.col -->
       	</div>
+
       
       <!-- /.row -->
     </section>

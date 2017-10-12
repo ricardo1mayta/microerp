@@ -1,18 +1,16 @@
 <?php include_once(HTML_DIR . '/template/titulo.php'); ?>
 <?php include_once(HTML_DIR . '/template/links.php'); ?>
-<?php include_once(HTML_DIR . '/template/sliderscss.php'); ?>
-
 <?php include_once(HTML_DIR . '/template/header_menu.php'); ?>
-
-
-   <div class="content-wrapper" OnLoad='compt=setTimeout("self.close();",50)'">
+<div class="content-wrapper" OnLoad='compt=setTimeout("self.close();",50)'">
     <!-- Content Header (Page header) -->
     <section class="content-header">
     <?php  if(isset($sms)){ echo $sms; }?>
       <h1>Nuevo Pedido</h1>
      <input type="hidden" id="usco" value="<?=$user['US_C_CODIGO'] ?>">
      <input type="hidden" id="idemp" >
+     
     </section>
+
 
     <!-- Main content -->
     <section class="content">
@@ -30,38 +28,11 @@
                 <button type="button" class="btn btn-box-tool" data-toggle="modal"><i class="fa fa-remove"></i></button>
               </div>             
             </div>
-            <!-- /.box-header -->
-            <form role="form" action="../registrarEmpresas/" name="form1" id="form1" method="POST" > 
-            </form>
-                <div class="box-body">
-                 <?php /* ?>
-                  <div class="row margin">
-                    <div class="col-sm-6">
-                      <input id="range_1" type="text" name="range_1" value="">
-                    </div>
-
-                    <div class="col-sm-6">
-                      <input id="range_2" type="text" name="range_2" value="1000;100000" data-type="double" data-step="500" data-postfix=" &euro;" data-from="30000" data-to="90000" data-hasgrid="true">
-                    </div>
-                  </div>
-                  <div class="row margin">
-                    <div class="col-sm-6">
-                      <input id="range_5" type="text" name="range_5" value="">
-                    </div>
-                    <div class="col-sm-6">
-                      <input id="range_6" type="text" name="range_6" value="">
-                    </div>
-                  </div>
-                  <div class="row margin">
-                    <div class="col-sm-12">
-                      <input id="range_4" type="text" name="range_4" value="10000;100000">
-                    </div>
-                  </div>
-                  <?php */ ?>
-                 <div class="table-responsive" class=" col-md-12" style="padding: 20px;">
-                     
-                     <table class="table table-bordered table-hover" id="tablajson">
-                      <thead class="bg-gray">
+            <div class="box-body">
+              <div class="table-responsive" class=" col-md-12" style="padding: 20px;">
+                
+                 <table   class="table table-bordered table-hover" id="tablajson">
+                  <thead class="bg-gray">
                         <th>#</th>
                         <th>CLiente</th>
                         <th>RUC</th>
@@ -71,7 +42,7 @@
                       </thead>
                       <tbody>
                         <?php  $p = new Pedidos();
-                         $result=$p->get_pedidos(2);
+                         $result=$p->get_pedidosall($user['US_C_CODIGO'],2);
                          while($lista=$result->fetch_array()){                        
                              ?>
                              <tr>
@@ -79,47 +50,48 @@
                                <td><?php echo $lista[1] ?></td>
                                <td><?php echo $lista[2] ?></td>
                                <td><?php echo $lista[3] ?></td>
-                               <td>Aprobado</i></td>
+                               
+                               <td>
+                                  <?php 
+                                    if($lista['PED_E_ESTADO']==0){
+                                    echo '<span class="badge bg-red">Baja</span>';
+                                    }
+                                    if($lista['PED_E_ESTADO']==1){
+                                    echo '<span class="badge bg-red">Sin Validar</span>';
+                                    }
+                                    if($lista['PED_E_ESTADO']==2){
+                                    echo '<span class="badge bg-yellow">En Proceso</span>';
+                                    }
+                                    if($lista['PED_E_ESTADO']==3){
+                                    echo '<span class="badge bg-green">En Facturacion</span>';
+                                    }
+                                   ?>
+                                    </td>
   
                              </tr>
                              <?php } ?>
                       </tbody>
-                      <tfoot></tfoot>
-                     </table>           
-                    
-                    </div>
-              
-                  
-                </div>
+                  <tfoot></tfoot>
+                 </table>           
+                
               </div>
-             </div>
-           </div>
+          
+            </div>
+              
           </div>
         </div>
         
-         <!-- left column -->
-        
-        
+       
         
       </div>
       <!-- /.row -->
     </section>
     <!-- /.content -->
-  </div>
+</div>
+
+   
  
-<div class="modal fade" id="alertas" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="rad">
-  <div class="modal-dialog "  >
-    <div class="modal-content " style="border-radius: 15px;" >
-      <div class="modal-header  " id="h" style="border-radius: 15px 15px 0px 0px;">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="exampleModalLabel">Importante!!!</h4>
-      </div>
-      <div class="modal-body" >
-      <h3 id="mensaje">Error</h3>
-      </div> 
-    </div>
-  </div>
-</div>            <!-- /.box-body -->
+            <!-- /.box-body -->
  <?php include_once(HTML_DIR . '/template/footer.php'); ?>
 
 <?php include_once(HTML_DIR . '/template/ajustes_generales.php'); ?>

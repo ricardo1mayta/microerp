@@ -249,7 +249,7 @@
                     <a href="#" class="btn btn-default btn-flat">Perfil</a>
                   </div>
                   <div class="pull-right">
-                    <a href="../user/" class="btn btn-default btn-flat">Salir</a>
+                    <a href="../" class="btn btn-default btn-flat">Salir</a>
                   </div>
                 </li>
               </ul>

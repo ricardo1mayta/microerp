@@ -77,7 +77,7 @@ public function __construct()
     <?php   
     }
     public function user_menu2($idus,$idpad) {
-        $sql="select  v.VIS_C_CODIGO,v.VIS_D_NOMBRE,v.VIS_L_ENLACE,v.VIS_I_IMG from dg_permisos p inner join dg_vistas v on v.VIS_C_CODIGO = p.VIS_C_CODIGO WHERE p.US_C_CODIGO='$idus' AND p.PRM_E_ESTADO=1 AND v.VIS_P_PADRE='$idvis'";
+        $sql="select  *,v.VIS_C_CODIGO,v.VIS_D_NOMBRE,v.VIS_L_ENLACE,v.VIS_I_IMG from dg_permisos p inner join dg_vistas v on v.VIS_C_CODIGO = p.VIS_C_CODIGO WHERE p.US_C_CODIGO='$idus' AND p.PRM_E_ESTADO=1 AND v.VIS_P_PADRE='$idpad'";
         $menu=$this->db->query($sql);
        
         return $menu;

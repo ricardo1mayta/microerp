@@ -202,11 +202,58 @@ function canceledit(i,p){
 function test(f){
   $("#sell"+f).addClass('bg-yellow');
 }
+function validapedido(){
+    
+    var ruc=$("#usco").val();
+    var file=$("#archivo").val();
+    var url="../Vistas/pedidos/validarpedido.php";
+     
+     var formData= new FormData($('#validapedidoarchivo')[0]);
+if( file!=""){
+     
+          swal({
+            title: "Atención!!",
+            text: "Desea Guardar?",
+            type: "warning",
+             confirmButtonText: "OK",
+            cancelButtonText: "Cancelar",
+            showCancelButton: true,
+            closeOnConfirm: false,
+            showLoaderOnConfirm: true,
+          },
+          function(){
+            setTimeout(function(){
+                          
+                              $.ajax({
+                                type: 'POST',
+                                url: url,
+                                data: formData,
+                                contentType: false,
+                                processData: false,
+                                success: function(data){
+                                 $('#validapedido').modal('hide');  
+                                 cargarpedidos();                                
+                                  swal("Ok", data, "success")
+                                }
+                              });
+                          
+                        
+                       }, 1000);
+              });
+        
+     }
+     else
+     {
+       swal("Falta el archivo de validacion", "", "warning")
+     }
+
+}
+
 </script>
 <?php include_once(HTML_DIR . '/template/header_menu.php'); ?>
 
 
-   <div class="content-wrapper" OnLoad='compt=setTimeout("self.close();",50)'">
+   <div class="content-wrapper" ">
     <!-- Content Header (Page header) -->
     <section class="content-header">
     <?php  if(isset($sms)){ echo $sms; }?>
@@ -222,7 +269,7 @@ function test(f){
       <div class="row">
       
         <!-- left column -->
-        <div class="col-md-6">
+        <div class="col-md-12">
                       
           <!-- general form elements disabled -->
           <div class="box box-warning">
@@ -257,16 +304,50 @@ function test(f){
               
           </div>
         </div>
-        <div class="col-md-6">
-                      
-          <!-- general form elements disabled -->
-          <div class="box box-warning">
+        
+       
+        
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+ 
+<div  class="modal " id="validapedido" tabindex="-1" role="dialog"  >
+  <div class="modal-dialog "  >
+    <div class="modal-content " style="border-radius: 15px; padding: 5px 5px 5px 5px"> 
+      <div class="modal-body" >
+        <div class="box box-warning">
+            <div class="box-header with-border">
+              <h3 class="box-title">Adjuntar Correo De confirnacion</h3>
+                          
+            </div>
+            <div class="box-body">
+              <form class="form-horizontal" action=""  method="post" id="validapedidoarchivo" onsubmit="validapedido(); return false;" enctype="multipart/form-data" >
+             <input type="file" name="archivo" id="archivo">
+             <input type="input" name="idped" id="">
+             <input type="hidden" name="u" id="u" value="<?=$user['US_C_CODIGO'] ?>">
+            </div>
+            <div class="box-footer ">
+              <div class="pull-rigth">
+                <button class="btn btn-success " onclick="validapedido()">Validar</button>
+              </div>
+            </div> 
+            </form> 
+          </div>
+      </div> 
+    </div>
+  </div>
+</div> 
+
+<div  class="modal " id="detallepedido" tabindex="-1" role="dialog"  >
+  <div class="modal-dialog "  >
+    <div class="modal-content " style="border-radius: 15px; padding: 5px 5px 5px 5px"> 
+      <div class="modal-body" >
+      <div class="box box-warning">
             <div class="box-header with-border">
               <h3 class="box-title">Datos de Productos</h3>
-              <div class="box-tools pull-right">              
-               <button type="button" class="btn btn-box-tool" data-toggle="modal"  ><i class="fa fa-minus"></i> </button>
-                <button type="button" class="btn btn-box-tool" data-toggle="modal"><i class="fa fa-remove"></i></button>
-              </div>             
+                          
             </div>
             <div class="box-body">
              <center><h2 id="nombreempresa"></h2></center>
@@ -293,24 +374,10 @@ function test(f){
             </div>
               
           </div>
-        </div>
-       
-        
-      </div>
-      <!-- /.row -->
-    </section>
-    <!-- /.content -->
-  </div>
- 
-<div  class="modal " id="alertas" tabindex="-1" role="dialog"  >
-  <div class="modal-dialog "  >
-    <div class="modal-content " style="border-radius: 15px; padding: 5px 5px 5px 5px"> 
-      <div class="modal-body" >
-      <center><h5 id="mensaje">Error</h5></center>
       </div> 
     </div>
   </div>
-</div>            <!-- /.box-body -->
+</div>             <!-- /.box-body -->
  <?php include_once(HTML_DIR . '/template/footer.php'); ?>
 
 <?php include_once(HTML_DIR . '/template/ajustes_generales.php'); ?>
@@ -328,7 +395,15 @@ function test(f){
         $("#mensage").fadeOut(1500);
     },3000);
   });
-
+ $('#validapedido').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+   var idped = button.data('id')
+  var modal = $(this)  
+  modal.find('input[name="archivo"]').val('') 
+   modal.find('input[name="idped"]').val(idped) 
+  
+  
+});
   
  
   </script>

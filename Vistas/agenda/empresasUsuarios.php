@@ -24,7 +24,7 @@
 						  if($tex!=''){
 		    					
 		                        //$categoria=$pro->get_allEmpresas12($tex,0,10,$u);
-						  	$categoria=$pro->get_allEmpresas12($tex,$ini,10,$u);
+						  	$categoria=$pro->get_empresaNombre($tex,$u);
 		                        while($row=$categoria->fetch_array()){
                          	
                          	$codigo=$row['EMP_C_CODIGO'];
