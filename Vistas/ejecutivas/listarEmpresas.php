@@ -7,8 +7,8 @@ buscar();
 
 });
 
-function solicitar(cod){
-  alert("as solicitado: "+cod);
+function solicitar(cod,cat){
+  alert("as solicitadossss: "+cod+cat);
 }
 
  function buscar(){
@@ -91,7 +91,7 @@ function contadores(){
 <?php include_once(HTML_DIR . '/template/header_menu.php'); ?>
 
 
-   <div class="content-wrapper" OnLoad='compt=setTimeout("self.close();",50)'">
+   <div class="content-wrapper" ">
     <!-- Content Header (Page header) -->
     <section class="content-header">
     <?php  if(isset($sms)){ echo $sms; }?>

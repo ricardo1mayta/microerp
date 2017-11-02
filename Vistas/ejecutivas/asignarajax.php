@@ -58,11 +58,11 @@
 						          // if($con==0){ echo '<span class="badge bg-green">Solicitar</span>';}
 						          // elseif($con==1){ echo '<span class="badge bg-green">Solicitar</span>';}
 						           if ($min==2) { echo '<span class="badge bg-red">Asignado</span>';}
-						           else{ echo '<a onclick="solicitar('.$codigo.')"><span class="badge bg-green">Solicitar</span></a>';}
+						           else{ echo '<a onclick="solicitar('.$codigo.',36)"><span class="badge bg-green">Solicitar</span></a>';}
 						            ?></td>
 						            <td><?php 
 						           if ($con==2) { echo '<span class="badge bg-red">Asignado</span>';}
-						           else{ echo '<a onclick="solicitar('.$codigo.')"><span class="badge bg-green">Solicitar</span></a>';}
+						           else{ echo '<a onclick="solicitar('.$codigo.',39)"><span class="badge bg-green">Solicitar</span></a>';}
 						            ?></td>
 
 						          

@@ -128,6 +128,13 @@ where c.CAR_E_ESTADO>0 and ( c.US_C_CODIGO is null or c.US_C_CODIGO<=0) limit 1,
         $result=$rows->fetch_array();
         return $result;
     }
+     public function set_solicitarempresa($idemp) 
+    {
+        $sql = "SELECT * FROM dg_keywords";
+        $rows=$this->db->query($sql);  
+        $result=$rows->fetch_array();
+        return $result;
+    }
     
 }
 

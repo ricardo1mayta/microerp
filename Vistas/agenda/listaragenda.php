@@ -105,7 +105,7 @@
         <div class="col-md-9">
            <div class="box box-danger">
             <div class="box-header with-border">          
-                <h3 class="box-title">Historial de Empresas Por Marca:<?php echo $emp['EMP_D_RAZONSOCIAL'];?></h3>
+                <h3 class="box-title"><?php echo $emp['EMP_D_RAZONSOCIAL'];?></h3>
                 <div class="box-tools pull-right">
                  <form action="../agendaEjecutiva/" method="POST">
                   <button type="submit" class="btn btn-success" >

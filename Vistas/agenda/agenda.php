@@ -115,16 +115,18 @@ function rep(){
             <!-- /.box-header -->
             <div class="box-body">
             <?php $a=new Agenda();
-
+            	$i=0;
             	$ag=$a->get_allsinfinalizar($usuario['US_C_CODIGO']); 
 					while($row=$ag->fetch_array())
           		{
+          			$i++;
             	?>
-              	<div class="external-event" style="background-color:<?php echo $row['AGE_C_COLOR'];?>;color:white; "><?php echo $row['AGE_DESCRIPCION']." - ".$row['AGE_F_FECHAFIN'];?></div>
-               	<form action="../listarAgenda/" method="POST"> 
-			         <input type="hidden" name="codigo" value="<?=$row['EMP_C_CODIGO']?>">
-			         <input type="submit" class="btn btn-info btn-xs" value="ver">
+            	<form action="../listarAgenda/" method="POST" id="search-form<?=$i?>"> 
+              	<div  onClick="document.forms['search-form<?=$i?>'].submit();" class="external-event" style="background-color:<?php echo $row['AGE_C_COLOR'];?>;color:white; "><?php echo $row['AGE_DESCRIPCION']." - ".$row['AGE_F_FECHAFIN'];?>
+                     <input type="hidden" name="codigo" value="<?=$row['EMP_C_CODIGO']?>">
+			        
 		         </form>
+		         </div>
                 <?php } ?>
                 
             </div>
@@ -148,8 +150,11 @@ function rep(){
 					while($row=$ag->fetch_array())
           		{
             	?>
-              	<div class="external-event" style="background-color:<?php echo $row['AGE_C_COLOR'];?>;color:white; "><?php echo $row['AGE_DESCRIPCION']." - ".$row['AGE_F_FECHAFIN'];?></div>
-               
+            	<form action="../listarAgenda/" method="POST" id="form<?=$i?>">
+              	<div onClick="document.forms['form<?=$i?>'].submit();" class="external-event" style="background-color:<?php echo $row['AGE_C_COLOR'];?>;color:white; "><?php echo $row['AGE_DESCRIPCION']." - ".$row['AGE_F_FECHAFIN'];?></div>
+              		<input type="hidden" name="codigo" value="<?=$row['EMP_C_CODIGO']?>">
+			        
+		         </form>
                 <?php } ?>
             </div>
             <!-- /.box-body -->
