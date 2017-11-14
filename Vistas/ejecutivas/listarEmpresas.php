@@ -8,7 +8,42 @@ buscar();
 });
 
 function solicitar(cod,cat){
-  alert("as solicitadossss: "+cod+cat);
+  //alert("as solicitadossss: "+cod+cat);
+   var buscar=$("#txtbuscar").val();
+        var url="../Vistas/ejecutivas/solicitaempresa.php";
+       contadores();
+        swal({
+            title: "Atención!!",
+            text: "Desea Solicitar?",
+            type: "warning",
+             confirmButtonText: "OK",
+            cancelButtonText: "Cancelar",
+            showCancelButton: true,
+            closeOnConfirm: false,
+            showLoaderOnConfirm: true,
+          },
+          function(){
+            setTimeout(function(){
+                                                 
+                         $.ajax({
+                           type: "POST",
+                           url: url,
+                           data: {e:cod,p:cat,u:2}, // Adjuntar los campos del formulario enviado.
+                                      
+                           success: function(data)
+                           {
+                               //$("#respuesta").html(data); // Mostrar la respuestas del script PHP.
+                                //$('#tablajson tbody').html(data);
+                              swal("Agregado",data, "success");
+
+                           }
+                         }); 
+                          
+                       
+                       }, 1000);
+              });
+      
+
 }
 
  function buscar(){
