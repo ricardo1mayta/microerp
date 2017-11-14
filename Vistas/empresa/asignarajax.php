@@ -33,7 +33,7 @@
                          $categoria=$pro->get_allEmpresas123($ini,10);
                          
                     	 }
-                    	 $total=$datos[0];
+                    	 //$total=$datos[0];
                          while($row=$categoria->fetch_array()){
                          	
                          	$codigo=$row['EMP_C_CODIGO'];

@@ -10,7 +10,7 @@ if(isset($_SESSION['usuario'])) {
 
 				case 'Agregar':
 
-						
+						$ms="";
 						
 						if( !empty($_POST['tag']) ) {
 						
@@ -21,7 +21,7 @@ if(isset($_SESSION['usuario'])) {
 						$idus=$user['US_C_CODIGO'];
 						
 						  $pro = new Tags();
-		                    $p=$pro-> save_tags($tag,$idus);
+		                    $p=$pro->save_tags($tag,$idus);
 		                  if($p['sms']=='ok'){
 																					
 										  // $url="../Vistas/registro_secciones.php?nom=".$nomproy;

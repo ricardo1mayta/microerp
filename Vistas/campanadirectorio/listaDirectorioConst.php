@@ -22,7 +22,7 @@
             <div class="box-header with-border">
               <h4 class="box-title">Lista del Directorio</h4>
               <div class="box-tools pull-right">
-               <a class="btn btn-info" href="http://grupodigamma.com/sys/Vistas/campanadirectorio/exportarcampanadirectorioCons.php
+               <a class="btn btn-info" href="../Vistas/campanadirectorio/exportarcampanadirectorioCons.php
 ">Exportar Data</a>
                
               </div>

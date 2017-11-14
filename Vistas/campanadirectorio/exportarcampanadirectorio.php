@@ -1,7 +1,7 @@
 <?php
 header("Content-type:text/html;charset=utf-8");
 header("Content-Type:application/vnd.ms-excel; charset=utf-8");
-header("Content-Disposition: attachment;filename=\"Reporte.xls\"");
+header("Content-Disposition: attachment;filename=\"Reporteeeee.xls\"");
 header("Expires: 0");
 
 ?>

@@ -38,7 +38,7 @@ public function save_tags($tag,$idus)
     }
     public function get_alltags() 
     {
-        $sql = "SELECT TAG_C_CODIGO,TAG_D_NOMBRE FROM dg_keywords where TAG_E_ESTADO>0 limit 5";
+        $sql = "SELECT TAG_C_CODIGO,TAG_D_NOMBRE FROM dg_keywords where TAG_E_ESTADO>0  order by TAG_C_CODIGO DESC limit 20";
          $rows=$this->db->query($sql);  
         return $rows;
     }

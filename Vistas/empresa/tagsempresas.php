@@ -33,13 +33,12 @@
       <div class="box box-warning">
         <div class="box-header with-border">
           <?php 
-          if(isset($_POST['codigo'])){ $idempresa=$_POST['codigo']; }else{$idempresa=$idemp;}
+          //if(isset($_POST['codigo'])){ $idempresa=$_POST['codigo']; }else{$idempresa=$idemp;}
           	
-            		$e=new Empresas(); 
-            		$emp=$e->get_Empresasid($idempresa);
+            	//	$e=new Empresas(); 
+            	//	$emp=$e->get_Empresasid($idempresa);
             ?>
-              <h2 class="box-title text-green"><small>Información General de:</small> <?php echo $emp['EMP_D_RAZONSOCIAL'];?></h2>
-              <h3 class="box-title text-red"><small>&nbsp; Estado:</small> <?php echo $emp['ESTADO'];?></h3>
+             
 
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
