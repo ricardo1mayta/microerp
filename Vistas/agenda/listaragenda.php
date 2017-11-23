@@ -24,11 +24,11 @@
 
   var cat=$("#marca").val();
   var url="../Vistas/agenda/historialpormarca.php";
- 
+ var u=<?=$usuario['US_C_CODIGO']?>;
     $.ajax({
            type: "GET",
            url: url,
-           data: {id: cat,e: e}, // Adjuntar los campos del formulario enviado.
+           data: {id: cat,e: e,u:u}, // Adjuntar los campos del formulario enviado.
                       
            success: function(data)
            {

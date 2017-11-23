@@ -7,7 +7,9 @@
   $idempresa= $_GET['e'];
 
                   $car = new Cartera();
-                               $res=$car->get_contactosempresa($idempresa);
+                               $res=$car->get_contactosempresa($idempresa); 
+                               
+                              
                                while($l=$res->fetch_array()){                        
                                    ?>
                                        
@@ -78,4 +80,4 @@
 
                                  
                                 </tr>
-                  <?php } ?> 
+                  <?php  }?> 

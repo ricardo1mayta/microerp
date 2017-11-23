@@ -8,7 +8,12 @@
 		 $categoria=$pro->get_allagendaus($usuario['US_C_CODIGO']);
 	 	    while($row=$categoria->fetch_array())
 	          {
-	          $events[] = array('id'=> $row['AGE_C_CODIGO'],'title'=> $row['AGE_DESCRIPCION'],'start'=> $row['AGE_F_FECHAINICIO'],'end'=> $row['AGE_F_FECHAFIN'],'color'=>$row['AGE_C_COLOR'],'description'=> $row['AGE_D_DETALLE'],'contacto'=>$row['CONTACTO']); 
+	          	$cadena=$row['AGE_D_DETALLE'];
+	          	$buscar=array(chr(13).chr(10), "\r\n", "\n", "\r");
+				$reemplazar=array(" ", " ", " ", " ");
+				$det=str_ireplace($buscar,$reemplazar,$cadena);
+	          	//$det=eregi_replace("[\n|\r|\n\r|\t|\0|\x0B]", "",$cadena);
+	          $events[] = array('id'=> $row['AGE_C_CODIGO'],'title'=> $row['AGE_DESCRIPCION'],'start'=> $row['AGE_F_FECHAINICIO'],'end'=> $row['AGE_F_FECHAFIN'],'color'=>$row['AGE_C_COLOR'],'description'=>$det,'contacto'=>$row['CONTACTO'],'tipo'=>$row['TIP_D_NOMBRE']); 
 	           
 	          }
 
@@ -28,7 +33,7 @@ function buscar(u){
 
   var buscar=$("#search").val();
   var url="../Vistas/agenda/empresasUsuarios.php";
- 
+ var u=<?=$usuario['US_C_CODIGO']?>;
   $('#resultado').html('<div  class="overlay" ><img src="../Public/img/Sistema/loading3.gif" alt="Loading..." width="25" height="25" />hola</div>')
     $.ajax({
            type: "GET",
@@ -270,7 +275,7 @@ function rep(){
 			</div>
 		  </div>
 		  <div class="form-group">
-			<label for="start" class="col-sm-2 control-label">Start date</label>
+			<label for="start" class="col-sm-2 control-label">Inicio</label>
 			<div class="col-sm-6">
 			  <input type="text" name="start" class="form-control" id="start" readonly>
 			</div>
@@ -299,7 +304,7 @@ function rep(){
 			</div>
 		  </div>
 		  <div class="form-group">
-			<label for="end" class="col-sm-2 control-label">End date</label>
+			<label for="end" class="col-sm-2 control-label">Fin</label>
 			<div class="col-sm-6">
 			  <input type="date" name="end" class="form-control" id="end" >
 			</div>
@@ -514,7 +519,7 @@ function rep(){
 				
 			},
 			eventRender: function(event, element) {
-				element.find('.fc-title').append("<br/>" + event.description);
+				element.find('.fc-title').append("<br/>"+event.tipo );
 				element.bind('dblclick', function() {
 					$('#ModalEdit #id').val(event.id);
 					$('#ModalEdit #contact').text(event.con);
@@ -571,7 +576,8 @@ function rep(){
 					start: '<?php echo $event['start']; ?>',
 					end: '<?php echo $event['end']; ?>',
 					color: '<?php echo $event['color']; ?>',
-					description: '<?php echo $event['description']; ?>',
+					description: '<?=$event['description']?>',
+					tipo:'<?=$event['tipo']?>',
 					con: '<?php echo $event['contacto']; ?>'
 
 				},

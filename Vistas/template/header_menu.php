@@ -20,6 +20,7 @@
           <ul class="nav navbar-nav">
             <!-- Messages: style can be found in dropdown.less-->
             <!-- Tasks: style can be found in dropdown.less -->
+            <?php /* ?>
              <li class="dropdown messages-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <i class="fa fa-envelope-o"></i>
@@ -96,43 +97,46 @@
                   <li class="footer"><a href="#">See All Messages</a></li>
                 </ul>
              </li>
+             <?php */?>
              <li class="dropdown notifications-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="fa fa-bell-o"></i>
-                <span class="label label-warning">10</span>
+                <span class="label label-danger">5</span>
               </a>
               <ul class="dropdown-menu">
-                <li class="header">Tienes 10 Notificaciones</li>
+                <li class="header">Tienes 10 entrevistas para hoy</li>
                 <li>
                   <!-- inner menu: contains the actual data -->
                   <ul class="menu">
                     <li>
                       <a href="#">
-                        <i class="fa fa-users text-aqua"></i> 5  Empresas por hacer seguimiento
+                        <i class="fa fa-users text-aqua"></i>Solicitudes Aprovadas
                       </a>
                     </li>
                    
                     <li>
                       <a href="#">
-                        <i class="fa fa-users text-red"></i> 5 Empresas Adicionadas
+                        <i class="fa fa-users text-red"></i>5 Empresas Adicionadas
                       </a>
                     </li>
                     <li>
                       <a href="#">
-                        <i class="fa fa-shopping-cart text-green"></i> 5 Ventas concretadas
+                        <i class="fa fa-shopping-cart text-green"></i>5 Ventas concretadas
                       </a>
                     </li>
                     
                   </ul>
                 </li>
-                <li class="footer"><a href="#">Ver Todo</a></li>
+                <li class="footer"><a href="">Ver Todo</a></li>
               </ul>
             </li>
+            <?php /* ?>
             <li class="dropdown tasks-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="fa fa-flag-o"></i>
                 <span class="label label-danger">9</span>
               </a>
+              
               <ul class="dropdown-menu">
                 <li class="header">Tienes 9 tareas por hacer</li>
                 <li>
@@ -141,7 +145,7 @@
                     <li><!-- Task item -->
                       <a href="#">
                         <h3>
-                          Design some buttons
+                          Estrevistar las empresas  
                           <small class="pull-right">20%</small>
                         </h3>
                         <div class="progress xs">
@@ -201,7 +205,7 @@
                 </li>
               </ul>
             </li>
-                
+                <?php */?>
             <!-- User Account: style can be found in dropdown.less -->
             <li class="dropdown user user-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">

@@ -36,7 +36,7 @@
 						    ?>
 						    
 						         
-						          <a onclick="link(<?php echo $codigo; ?>,'<?php echo $rsocial; ?>')"><?php echo  $rsocial." | ".$ruc." |"; ?></a><br>
+						          <a style="cursor: pointer;" onclick="link(<?php echo $codigo; ?>,'<?php echo $rsocial; ?>')"><?php echo  $rsocial." | ".$ruc." |"; ?></a><br>
 						         
 						          
 					          

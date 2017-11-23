@@ -60,19 +60,28 @@ if(isset($_SESSION['usuario'])) {
 						
 						if( !empty($_POST['id']) ) {
 						
-						echo "|".$idage=$_POST['id'];
+						$idage=$_POST['id'];
+						$ms="";
+						$detalle=$_POST['detalle'];
+						$repro=$_POST['repro'];
+						$fini=$_POST['start']." ".$_POST['hstart'];
 						
-						echo "|".$detalle=$_POST['detalle'];
-						echo "|".$repro=$_POST['repro'];
-						echo "|".$fini=$_POST['start']." ".$_POST['hstart'];
-						
-						echo "|".$ffin=$_POST['end']." ".$_POST['hend'];
+						$ffin=$_POST['end']." ".$_POST['hend'];
 						//$hfin=$_POST['hfin'];
 						$user=$_SESSION['usuario'];
-						echo "|".$idus=$user['US_C_CODIGO'];
-						
+						$idus=$user['US_C_CODIGO'];
+						$color="#FF8C00";
+					
 						  $pro = new Agenda();
-		                  $p=$pro-> editar_agenda($idage,$detalle,$fini,$ffin,$idus,$color);
+						if ($repro!=null) {
+		                  
+		                  $p=$pro-> editar_agenda($idage,$detalle,$repro,$repro,$idus,$color,2);
+
+		                  }
+		                  else
+		                  {
+		                  	$p=$pro-> editar_agenda($idage,$detalle,$fini,$ffin,$idus,$color,1);
+		                  }
 		                  if($p['sms']=='ok'){
 																					
 										// $url="../Vistas/registro_secciones.php?nom=".$nomproy;
@@ -137,20 +146,21 @@ if(isset($_SESSION['usuario'])) {
 				case 'Cerrar Ficha':
 
 						
-						
+						$ms="";
 						if( !empty($_POST['id']) ) {
 						
 						$idage=$_POST['id'];
-						
+						$color="#FF8C00";
 						$detalle=$_POST['detalle'];
-						$color=$_POST['color'];
+						//$color=$_POST['color'];
 						$fini=$_POST['start']." ".$_POST['hstart'];
-						$estado=$_POST['estado'];
+						//$estado=$_POST['estado'];
 						$ffin=$_POST['end']." ".$_POST['hend'];
 						//$hfin=$_POST['hfin'];
 						$user=$_SESSION['usuario'];
 						$idus=$user['US_C_CODIGO'];
-						
+						$color="#FF8C00";
+						$estado=3;
 						  $pro = new Agenda();
 		                    $p=$pro-> editar_agenda($idage,$detalle,$fini,$ffin,$idus,$color,$estado);
 		                  if($p['sms']=='ok'){

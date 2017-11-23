@@ -10,6 +10,7 @@
   <?php 
         $id=$_GET['id'];
         $e=$_GET['e'];
+         $u=$_GET['u'];
          $cate = new Productos();
         $categoria=$cate->get_Idproductos($id);
          while($cat=$categoria->fetch_array()){   
@@ -24,7 +25,7 @@
 
       <?php 
     $ejc=new Agenda();
-    $ej=$ejc->get_allagendausEmp($e,2,$cat['PRO_C_CODIGO']);
+    $ej=$ejc->get_allagendausEmp($e,$u,$cat['PRO_C_CODIGO']);
     
     while($row=$ej->fetch_array()){ ?>
     <li>

@@ -11,7 +11,7 @@ private $db;
            
     }
     public function save_contacto($nombre,$apell,$cargo,$direc,$idus,$idemp){
-    	 $sql = "CALL spc_save_contacto('$nombre','$apell','$cargo','$direc','$idus','$idemp');";
+    	$sql = "CALL spc_save_contacto('$nombre','$apell','$cargo','$direc','$idus','$idemp');";
         
        $rows=$this->db->query($sql);  
        $result=$rows->fetch_array();    

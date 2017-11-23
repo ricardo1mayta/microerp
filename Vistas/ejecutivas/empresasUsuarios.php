@@ -64,20 +64,21 @@
 						          $s = new Moduloejecutivas();
 						          $se=$s->get_sectores($codigo,36);
 						           while($r=$se->fetch_array()){
-						           	echo '<span class="badge bg-yellow">'.$r['PAR_D_DECRIPCION'].'</span>';
+						           	echo '<span class="badge bg-blue">'.$r['PAR_D_DECRIPCION'].'</span>';
 						           	/*
 						           	if($r['PAR_C_CODIGO']==37){
 						           		echo '<span class="badge bg-yellow">'.$r['PAR_D_DECRIPCION'].'</span>';
 							           	}else if ($r['PAR_C_CODIGO']==38) {
 							           		echo '<span class="badge bg-light-blue">'.$r['PAR_D_DECRIPCION'].'</span>';
-							           	}*/
+							           	}
+							           	*/
 						             } ?>
 						          </td>
 						          <td><?php
 						          $s = new Moduloejecutivas();
 						          $se=$s->get_sectores($codigo,39);
 						           while($r=$se->fetch_array()){
-						           	echo '<span class="badge bg-teal">'.$r['PAR_D_DECRIPCION'].'</span>';
+						           	echo '<span class="badge bg-green">'.$r['PAR_D_DECRIPCION'].'</span>';
 						           	/*
 						            	if($r['PAR_C_CODIGO']==40){
 						           		echo '<span class="badge bg-teal">'.$r['PAR_D_DECRIPCION'].'</span>';

@@ -137,6 +137,297 @@ function contadores(){
 }
 
 
+  function cargar_contactos(){
+    var url="../Vistas/ejecutivas/listarContactos.php";
+ var e = $("#codigocliente").val();
+ //$('table_contactos').html('');
+    $.ajax({
+           type: "GET",
+           url: url,
+           data: {e:e}, // Adjuntar los campos del formulario enviado.
+                      
+           success: function(data)
+           {
+               //$("#respuesta").html(data); // Mostrar la respuestas del script PHP.
+                $('#table_contactos tbody').html(data);
+            // alert(e);
+
+           }
+         });
+
+  }
+
+  function newcontacto()
+  {
+      var url="../Vistas/ejecutivas/savecontacto.php";
+  var e = $("#codigocliente").val();
+ //$('table_contactos').html('');
+    $.ajax({
+           type: "GET",
+           url: url,
+           data: {e:e}, // Adjuntar los campos del formulario enviado.
+                      
+           success: function(data)
+           {
+               //$("#respuesta").html(data); // Mostrar la respuestas del script PHP.
+                $('#table_contactos tbody').html(data);
+             //alert(e);
+
+           }
+         });
+  }
+  function newtelefono(e,c,m)
+  { 
+  
+    if (validanumero(e,c,m)){
+    $('#newtel').modal('toggle'); 
+    var url="../Vistas/ejecutivas/savetelefono.php";
+  
+  //$('table_contactos').html('');
+    $.ajax({
+           type: "GET",
+           url: url,
+           data: $("#newtelefono").serialize(), // Adjuntar los campos del formulario enviado.
+                      
+           success: function(data)
+           {
+               //$("#respuesta").html(data); // Mostrar la respuestas del script PHP.
+                //$('#table_contactos tbody').html(data);
+            swal("Agregado",data, "success");
+             cargar_contactos();
+
+           }
+         });
+  }else{
+    swal("Alerta",m, "error");
+  }
+  }
+function edittelefono(e,c,m)
+  { 
+    
+  if (validanumero(e,c,m)){
+    $('#edittel').modal('toggle'); 
+    var url="../Vistas/ejecutivas/updatetelefono.php";
+  
+  //$('table_contactos').html('');
+    $.ajax({
+           type: "GET",
+           url: url,
+           data: $("#editelcon").serialize(), // Adjuntar los campos del formulario enviado.
+                      
+           success: function(data)
+           {
+               //$("#respuesta").html(data); // Mostrar la respuestas del script PHP.
+                //$('#table_contactos tbody').html(data);
+            swal("Agregado",data, "success");
+             cargar_contactos();
+
+           }
+         });
+  }else{
+    swal("Alerta",m, "error");
+  }
+  }
+  function delete_telefono(t){
+    swal({
+            title: "Atención!!",
+            text: "Desea Eliminar?",
+            type: "warning",
+             confirmButtonText: "OK",
+            cancelButtonText: "Cancelar",
+            showCancelButton: true,
+            closeOnConfirm: false,
+            showLoaderOnConfirm: true,
+          },
+          function(){
+            setTimeout(function(){
+                  var u=<?php echo $usuario['US_C_CODIGO']; ?>;
+                          var url="../Vistas/ejecutivas/deletetelefono.php";
+                //$('table_contactos').html('');
+                $.ajax({
+                       type: "GET",
+                       url: url,
+                       data: {t:t,u:u}, // Adjuntar los campos del formulario enviado.
+                                  
+                       success: function(data)
+                       {
+                           //$("#respuesta").html(data); // Mostrar la respuestas del script PHP.
+                            //$('#table_contactos tbody').html(data);
+                        swal("Agregado",data, "success");
+                         cargar_contactos();
+
+                       }
+                     });                               
+                       }, 1000);
+              }); 
+  }
+function newcorreo(e,m)
+  { 
+  
+    if (validacorreo(e,m)){
+    $('#newcorr').modal('toggle'); 
+    var url="../Vistas/ejecutivas/savecorreo.php";
+  
+  //$('table_contactos').html('');
+    $.ajax({
+           type: "GET",
+           url: url,
+           data: $("#frmnewcorreo").serialize(), // Adjuntar los campos del formulario enviado.
+                      
+           success: function(data)
+           {
+               //$("#respuesta").html(data); // Mostrar la respuestas del script PHP.
+                //$('#table_contactos tbody').html(data);
+            swal("Agregado",data, "success");
+             cargar_contactos();
+
+           }
+         });
+  }else{
+    swal("Alerta",m, "error");
+  }
+  }
+function editcorreo(e,m)
+  { 
+    
+  if (validacorreo(e,m)){
+    $('#editcorr').modal('toggle'); 
+    var url="../Vistas/ejecutivas/updatecorreo.php";
+  
+  //$('table_contactos').html('');
+    $.ajax({
+           type: "GET",
+           url: url,
+           data: $("#formedicorreo").serialize(), // Adjuntar los campos del formulario enviado.
+                      
+           success: function(data)
+           {
+               //$("#respuesta").html(data); // Mostrar la respuestas del script PHP.
+                //$('#table_contactos tbody').html(data);
+            swal("Agregado",data, "success");
+             cargar_contactos();
+
+           }
+         });
+  }else{
+    swal("Alerta",m, "error");
+  }
+  }
+  function delete_correo(t){
+
+    swal({
+            title: "Atención!!",
+            text: "Desea Eliminar?",
+            type: "warning",
+             confirmButtonText: "OK",
+            cancelButtonText: "Cancelar",
+            showCancelButton: true,
+            closeOnConfirm: false,
+            showLoaderOnConfirm: true,
+          },
+          function(){
+            setTimeout(function(){
+                  var u=<?php echo $usuario['US_C_CODIGO']; ?>;
+                          var url="../Vistas/ejecutivas/deletecorreo.php";
+                //$('table_contactos').html('');
+                $.ajax({
+                       type: "GET",
+                       url: url,
+                       data: {c:t,u:u}, // Adjuntar los campos del formulario enviado.
+                                  
+                       success: function(data)
+                       {
+                           //$("#respuesta").html(data); // Mostrar la respuestas del script PHP.
+                            //$('#table_contactos tbody').html(data);
+                        swal("Agregado",data, "success");
+                         cargar_contactos();
+
+                       }
+                     });                               
+                       }, 1000);
+              }); 
+  }
+function savecontactoss(){
+    var u=<?php echo $usuario['US_C_CODIGO']; ?>;
+          var url="../Vistas/ejecutivas/savecontacto.php";
+          //$('table_contactos').html('');
+        $.ajax({
+               type: "GET",
+               url: url,
+               data:$("#frmcontactos").serialize() , // Adjuntar los campos del formulario enviado.
+                          
+               success: function(data)
+               {
+                   //$("#respuesta").html(data); // Mostrar la respuestas del script PHP.
+                    //$('#table_contactos tbody').html(data);
+                    $('#addcontactos').modal('toggle'); 
+                    cargar_contactos();
+                swal("Agregado",data, "success");
+                 
+
+               }
+             });                               
+      
+}
+function updatecontactoss(){
+    var u=<?php echo $usuario['US_C_CODIGO']; ?>;
+          var url="../Vistas/ejecutivas/updatecontacto.php";
+          //$('table_contactos').html('');
+        $.ajax({
+               type: "GET",
+               url: url,
+               data:$("#frmeditacontactos").serialize() , // Adjuntar los campos del formulario enviado.
+                          
+               success: function(data)
+               {
+                   //$("#respuesta").html(data); // Mostrar la respuestas del script PHP.
+                    //$('#table_contactos tbody').html(data);
+                    $('#editcontactos').modal('toggle'); 
+                    cargar_contactos();
+                swal("Actaualizado",data, "success");
+                 
+
+               }
+             });                               
+      
+}
+function deletecontactoss(c){
+  swal({
+            title: "Atención!!",
+            text: "Desea Eliminar?",
+            type: "warning",
+             confirmButtonText: "OK",
+            cancelButtonText: "Cancelar",
+            showCancelButton: true,
+            closeOnConfirm: false,
+            showLoaderOnConfirm: true,
+          },
+          function(){
+            setTimeout(function(){
+                  var u=<?php echo $usuario['US_C_CODIGO']; ?>;
+                var url="../Vistas/ejecutivas/deletecontacto.php";
+                //$('table_contactos').html('');
+              $.ajax({
+                     type: "GET",
+                     url: url,
+                     data:{c:c,u:u} , // Adjuntar los campos del formulario enviado.
+                                
+                     success: function(data)
+                     {             
+                          cargar_contactos();
+                      swal("Eliminado",data, "success");
+                       
+
+                     }
+                   });                             
+                       }, 1000);
+              }); 
+
+
+
+                                 
+      
+}
 </script>
 <?php include_once(HTML_DIR . '/template/header_menu.php'); ?>
 
@@ -165,7 +456,7 @@ function contadores(){
           <!-- general form elements disabled -->
           <div class="box box-warning">
             <div class="box-header with-border">
-              <h3 class="box-title">Registro de Empresas</h3>
+              <h3 class="box-title">Registro de Empresas </h3>
               <div class="box-tools pull-right">
                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#agregarEmpresas" ><i class="fa fa-plus"></i> Agregar</button>
                
