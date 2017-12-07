@@ -53,7 +53,7 @@ if(isset($_SESSION['usuario'])) {
 					break;
 					case 'ejecutiva':
 
-					
+					$ms="";
 
 					$idcar=$_POST['idcar'];
 					$idusu=$user['US_C_CODIGO'];
