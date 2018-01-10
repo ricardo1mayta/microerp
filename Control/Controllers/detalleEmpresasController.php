@@ -1,6 +1,6 @@
 <?php
 if(isset($_SESSION['usuario'])) {
-
+$ms='';
 	if(!empty($_POST['evento']))
 		{
 

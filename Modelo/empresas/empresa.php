@@ -73,14 +73,14 @@ where c.CAR_E_ESTADO>0 and ( c.US_C_CODIGO is null or c.US_C_CODIGO<=0) limit 1,
     {
         $sql = "SELECT e.EMP_C_CODIGO,e.EMP_C_RUC,e.EMP_D_RAZONSOCIAL,e.EMP_D_NOMBRECOMERCIAL,
         empresalibre(e.EMP_C_CODIGO,36) AS MIN, empresalibre(e.EMP_C_CODIGO,39) AS CON FROM dg_empresas e 
-        WHERE e.EMP_E_ESTADO>0 and concat(e.EMP_C_RUC,' ',e.EMP_D_RAZONSOCIAL,' ',e.EMP_D_NOMBRECOMERCIAL) LIKE '%".$txt."%' ORDER BY e.EMP_C_CODIGO DESC limit $ini,$intervalo; ";
+        WHERE e.EMP_E_ESTADO>0 and concat(e.EMP_D_RAZONSOCIAL,' ',e.EMP_D_NOMBRECOMERCIAL) LIKE '".$txt."%' ORDER BY e.EMP_C_CODIGO DESC limit $ini,$intervalo; ";
          $rows=$this->db->query($sql);  
         return $rows;
     }
     public function get_conteo12($txt) 
     {
         $sql = "SELECT count(e.EMP_C_CODIGO) AS total FROM dg_empresas e 
-        WHERE e.EMP_E_ESTADO>0 and concat(e.EMP_C_RUC,' ',e.EMP_D_RAZONSOCIAL,' ',e.EMP_D_NOMBRECOMERCIAL) LIKE '%".$txt."%' ORDER BY e.EMP_C_CODIGO DESC ; ";
+        WHERE e.EMP_E_ESTADO>0 and concat(e.EMP_D_RAZONSOCIAL,' ',e.EMP_D_NOMBRECOMERCIAL) LIKE '".$txt."%' ORDER BY e.EMP_C_CODIGO DESC ; ";
          $rows=$this->db->query($sql);  
         $result=$rows->fetch_array();
     
@@ -109,7 +109,7 @@ where c.CAR_E_ESTADO>0 and ( c.US_C_CODIGO is null or c.US_C_CODIGO<=0) limit 1,
         $sql = "SELECT e.EMP_C_CODIGO, p.PAR_D_NOMBRE,e.EMP_C_RUC,e.EMP_D_RAZONSOCIAL,e.EMP_D_NOMBRECOMERCIAL,
         CASE WHEN e.EMP_E_ESTADO ='1' THEN 'ACTIVO' WHEN e.EMP_E_ESTADO ='2'THEN 'OBS' ELSE 'OTRO' END AS ESTADO FROM dg_empresas e 
             INNER JOIN dg_parametros p ON p.PAR_C_CODIGO=e.PAR_C_CODIGO
-          WHERE e.EMP_E_ESTADO>0 and concat(e.EMP_C_RUC,' ',e.EMP_D_RAZONSOCIAL,' ',e.EMP_D_NOMBRECOMERCIAL) LIKE '%".$txt."%' ORDER BY e.EMP_C_CODIGO DESC limit 0,50; ";
+          WHERE e.EMP_E_ESTADO>0 and concat(e.EMP_D_RAZONSOCIAL,' ',e.EMP_D_NOMBRECOMERCIAL) LIKE '".$txt."%' ORDER BY e.EMP_C_CODIGO DESC limit 0,50; ";
         $rows=$this->db->query($sql);  
         return $rows;
     }

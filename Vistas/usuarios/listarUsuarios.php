@@ -38,7 +38,7 @@
                   <th>APELLIDOS</th>
                   <th>CORREO</th>
                  
-                  <th>EMPRESA</th>
+                  <th>Opciones</th>
                    
                 </tr>
                 </thead>
@@ -54,7 +54,7 @@
                         <td><?php echo $lista['US_D_NOMBRE']?></td>
                         <td><?php echo $lista['US_D_APELL']?></td>
                         <td><?php echo $lista['US_C_CORREO']?></td>
-                        <td><?php echo $lista['SED_D_NOMBRE']?></td>
+                      
                          <td>
                           <form action="../listarUsuarios/"  method="post">
                             <input type="hidden" value="eliminar" name="evento">

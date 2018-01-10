@@ -4,7 +4,7 @@
 <script >
 $(document).ready(function(){
 buscar();
-
+ $('#pagina').text('pagina 1 de ');
 });
 
 
@@ -73,6 +73,7 @@ buscar();
                ini=(tot-aux);
             }
            }
+           $('#pagina').text('Pagina '+((ini/10)+1)+' de ');
           $('#acumulador').val(ini);
           } else {
             $('#acumulador').val(0);
@@ -488,7 +489,7 @@ function deletecontactoss(c){
                       </thead>
                       <tbody></tbody>
                      </table> 
-                     
+                     <label id="pagina"></label> 
                      <div id="total">
                        
                      </div>          

@@ -5,13 +5,19 @@ if(isset($_SESSION['usuario'])) {
 			$evento=$_POST['evento'];
 			switch ($evento) {
 				case 'guardardet':
+						 $p='';
 						if(!empty($_POST['prod']) and !empty($_POST['nompro']) and !empty($_POST['cant']) and !empty($_POST['prec'])  ){
 								$idpro=$_POST['prod'];
 								$nombre=$_POST['nompro'];
 								$cantidad=$_POST['cant'];
 								$precio=$_POST['prec'];
+								$dtp=$_POST['dtp'];
+								$um=$_POST['um'];
+								$lg=$_POST['lg'];
+								$an=$_POST['an'];
+								$ubi=$_POST['ubi'];
 								$prod=new detProductos();
-								$p=$prod->save_detproducto($idpro,$nombre,$cantidad,$precio);
+								$p=$prod->save_detproducto($idpro,$nombre,$cantidad,$precio,$dtp,$um,$lg,$an,$ubi);
 									if($p['sms']=='ok'){
 										  // $url="../Vistas/registro_secciones.php?nom=".$nomproy;
 										 $sms='<div id="mensage" class="alert alert-success alert-dismissible">

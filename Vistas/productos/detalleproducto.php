@@ -79,7 +79,7 @@ function permite(elEvento, permitidos) {
                     <div class="form-group col-md-2" name="marca" id="marca">
                       <label>Marca </label>
                        <select class="form-control"  disabled>
-                       <option>-----Seleccione-----</option>
+                       <option>Seleccione</option>
                          
                          </select>                      
                          
@@ -87,8 +87,22 @@ function permite(elEvento, permitidos) {
                      <div class="form-group col-md-2" name="prod" id="prod">
                           <label>Producto</label>
                            <select class="form-control" disabled>
-                           <option>-----Seleccione-----</option>
+                           <option>Seleccione</option>
                             
+                     </select>
+                     </div>
+                     <div class="form-group col-md-2" name="tprod" id="tprod">
+                          <label>Tipo Producto</label>
+                           <select class="form-control" name="dtp">
+                           <option>-----Seleccione-----</option>
+                             <?php 
+                         $cate = new tipoDetProductos();
+                         $categoria=$cate->get_TipoDetalleproductos();
+                         while($cat=$categoria->fetch_array()){  
+                             ?>
+                                  <option value="<?php echo $cat['TDP_C_CODIGO']?>"><?php echo $cat['TDP_D_NOMBRE']?></option>
+                                             
+                          <?php }?>
                      </select>
                      </div>
                     
@@ -103,6 +117,27 @@ function permite(elEvento, permitidos) {
                    	<div class="form-group col-md-2">
                       <label>Precio $.</label>
                       <input type="text" class="form-control"   name="prec" placeholder="0.00" onkeypress="return permite(event,'num')"  required>
+                    </div>
+                      <div class="form-group col-md-2">
+                      <label>Unida Medida</label>
+                       <select class="form-control" name="um" >
+                           <option>Seleccione</option>
+                           <option>m2</option>
+                           <option>cm</option>
+                           <option>PX</option>                            
+                     </select>
+                    </div>
+                      <div class="form-group col-md-2">
+                      <label>Largo</label>
+                      <input type="text" class="form-control"   name="lg" placeholder="0.00" onkeypress="return permite(event,'num')"  required>
+                    </div>
+                      <div class="form-group col-md-2">
+                      <label>Ancho</label>
+                      <input type="text" class="form-control"   name="an" placeholder="0.00" onkeypress="return permite(event,'num')"  required>
+                    </div>
+                      <div class="form-group col-md-2">
+                      <label>Ubicacion</label>
+                      <input type="text" class="form-control"   name="ubi" placeholder="pabellon" >
                     </div>
                      <div class="form-group col-md-12">
                      <br>
@@ -140,6 +175,7 @@ function permite(elEvento, permitidos) {
       							
       					
                         <th>PRODUCTO</th>
+                        <th>TIPO</th>
                         <th>DETALLE</th>
                         <th>CANTIDAD</th>
                         <th>PRECIO</th>
@@ -156,6 +192,7 @@ function permite(elEvento, permitidos) {
                            <tr>
                            
                             <td><?php echo $lista1['PRO_D_NOMBRE']?></td>
+                            <td><?php echo $lista1['TDP_D_NOMBRE']?></td>
                             <td><?php echo $lista1['DPRO_D_NOMBRE']?></td>
                             <td><?php echo $lista1['DPRO_N_CANTIDAD']?></td>
                             <td><?php echo $lista1['DPRO_N_PRECIO']?></td>

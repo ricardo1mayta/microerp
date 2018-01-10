@@ -4,10 +4,10 @@
               include("../../Modelo/ejecutivas/moduloejecutivas.php"); ?>
 <?php 
                  $pro = new Moduloejecutivas();
-                       
+                       $us=$_GET['u'];
                         if(isset($_GET['txt'])){
                          $tex=$_GET['txt'];
-                         $us=$_GET['u'];
+                         
                                 $categoria=$pro->get_conteouser12($tex,$us);
                                
                          } else{
@@ -20,7 +20,7 @@
                             $json_string =$categoria[0];
 
                             echo "<input id='contotal' type='hidden' value='".$json_string."'>";
-                             echo "<label>Registros encontrados: ".$json_string."</label>";
+                             echo "<label> ".$json_string." Registros encontrados</label>";
                             
 
 

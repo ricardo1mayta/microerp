@@ -152,7 +152,7 @@ public function get_destrito($id){
       return $rows;
     }
 public function save_ubigeo($idparis,$idest,$idprov,$iddis,$idus,$idemp){
-      $sql = "call spu_save_ubigeo('$idparis','$idest','$idprov','$iddis','$idus','$idemp');";
+     echo  $sql = "call spu_save_ubigeo('$idparis','$idest','$idprov','$iddis','$idus','$idemp');";
       $rows=$this->db->query($sql);   
       $result=$rows->fetch_array();    
       return $result;

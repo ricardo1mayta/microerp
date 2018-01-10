@@ -5,7 +5,7 @@ $(document).ready(function(){
   var us=$("#idusu").val();
   
   buscar1(us);
-
+ $('#pagina').text('pagina 1 de ');
 });
 
 
@@ -14,14 +14,17 @@ $(document).ready(function(){
         var buscar=$("#txtbuscar").val();
        var ini=parseFloat($("#acumulador").val());
        var tot=$("#contotal").val();
+       var us=$("#idusu").val();
+      var  n=1;
        var aux=tot%10;
         if(ini>=0){
-           if(evetus=='sig'){ if(ini+10>tot-aux){ ini=(tot-aux); }else{ ini=(ini+10); } } 
-            if(evetus=='ant'){ if(ini==0){ ini=0; }else{ ini=(ini-10); } }
-            if(evetus=='fin') { if(tot==0){ ini=0; }else{ ini=(tot-aux); } }
-            if(evetus=='ini') { if(tot==0){ ini=0; }else{ ini=0;  } }
+           if(evetus=='sig'){ if(ini+10>tot-aux){ ini=(tot-aux);n=(ini/10) ; }else{ ini=(ini+10); n=(ini/10) ;} } 
+            if(evetus=='ant'){ if(ini==0){ ini=0; n=(ini/10) ; }else{ ini=(ini-10); n=(ini/10) ; } }
+            if(evetus=='fin') { if(tot==0){ ini=0; n=(ini/10) ;}else{ ini=(tot-aux);n=(ini/10) ; } }
+            if(evetus=='ini') { if(tot==0){ ini=0; n=(ini/10) ; }else{ ini=0; n=1;  } }
 
           $('#acumulador').val(ini);
+          $('#pagina').text('Pagina '+((ini/10)+1)+' de ');
           } else {
             $('#acumulador').val(0);
           }
@@ -33,7 +36,7 @@ $(document).ready(function(){
           $.ajax({
            type: "GET",
            url: url,
-           data: {u: u,txt: buscar,limit:ini}, // Adjuntar los campos del formulario enviado.
+           data: {u: us,txt: buscar,limit:ini}, // Adjuntar los campos del formulario enviado.
                       
            success: function(data)
            {
@@ -46,16 +49,17 @@ $(document).ready(function(){
  
 }
 
-function buscar1(u){
+function buscar1(){
 
   var buscar=$("#txtbuscar").val();
   var url="../Vistas/ejecutivas/empresasUsuarios.php";
-  contadores(u)
+  var us=$("#idusu").val();
+  contadores(us)
   $('#resul').html('<div  class="overlay" ><img src="../Public/img/Sistema/loading3.gif" alt="Loading..." width="25" height="25" /></div>')
     $.ajax({
            type: "GET",
            url: url,
-           data: {u: u,txt: buscar}, // Adjuntar los campos del formulario enviado.
+           data: {u: us,txt: buscar}, // Adjuntar los campos del formulario enviado.
                       
            success: function(data)
            {
@@ -129,9 +133,9 @@ var url="../Vistas/ejecutivas/paginacionuser.php"; // El script a dónde se real
                   
                     
                     <div  style="padding: 20px 0px 0px 20px; " class="input-group col-md-6">
-                    <input id="txtbuscar" name="terminos" type="text"  onkeyup="buscar()" class="form-control " placeholder="Search..." autofocus>
+                    <input id="txtbuscar" name="terminos" type="text"  onkeyup="buscar1()" class="form-control " placeholder="Search..." autofocus>
                         <span class="input-group-btn">
-                          <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"  onclick="buscar()"></i>
+                          <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"  onclick="buscar1()"></i>
                           </button>
                         </span>
                     </div>
@@ -148,18 +152,19 @@ var url="../Vistas/ejecutivas/paginacionuser.php"; // El script a dónde se real
                       </thead>
                       <tbody></tbody>
                      </table> 
-                     
+                      <label id="pagina"></label> 
                      <div id="total">
                        
-                     </div>          
+                     </div>
+                             
                       <div>
 
                       <input type="hidden" name="" id="acumulador" value="0">
                         <ul class="pagination">
-                        <li><a onclick="buscarpaginacion('ini')">Inicio</a></li>  
-                        <li><a  onclick="buscarpaginacion('ant')" >&laquo;Anterior</a></li>                      
-                        <li><a  onclick="buscarpaginacion('sig')">Siguiente&raquo;</a></li>                    
-                        <li><a onclick="buscarpaginacion('fin')">Final</a></li>
+                        <li style="cursor: pointer" ><a onclick="buscarpaginacion('ini')">Inicio</a></li>  
+                        <li style="cursor: pointer"><a  onclick="buscarpaginacion('ant')" >&laquo;Anterior</a></li>                      
+                        <li style="cursor: pointer"><a  onclick="buscarpaginacion('sig')">Siguiente&raquo;</a></li>                    
+                        <li style="cursor: pointer"><a onclick="buscarpaginacion('fin')">Final</a></li>
                         </ul>
                       </div>
                     </div>

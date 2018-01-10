@@ -32,7 +32,7 @@ class Pedidos {
     {
          $sql = "SELECT e.EMP_C_CODIGO,e.EMP_C_RUC,e.EMP_D_RAZONSOCIAL,(SELECT DIRE_D_DESCRIPCION from dg_direccionesempresa where EMP_C_CODIGO=e.EMP_C_CODIGO and DIRE_T_TIPO=1 LIMIT 1) as DIRECCION FROM dg_cartera c 
 INNER JOIN dg_empresas e on c.EMP_C_CODIGO=e.EMP_C_CODIGO WHERE c.US_C_CODIGO='$us' AND e.EMP_E_ESTADO>0 
-and concat(e.EMP_C_RUC,' ',e.EMP_D_RAZONSOCIAL,' ',e.EMP_D_NOMBRECOMERCIAL) LIKE '%".$txt."%' GROUP BY e.EMP_C_CODIGO ;";
+and concat(e.EMP_D_RAZONSOCIAL,' ',e.EMP_D_NOMBRECOMERCIAL) LIKE '%".$txt."%' GROUP BY e.EMP_C_CODIGO  limit 10;";
          $rows=$this->db->query($sql);  
         return $rows;
 
@@ -41,7 +41,10 @@ and concat(e.EMP_C_RUC,' ',e.EMP_D_RAZONSOCIAL,' ',e.EMP_D_NOMBRECOMERCIAL) LIKE
     // Este metodo para listar productos en la vista pedidos
      public function get_productos($txt) 
     {
-                $sql="SELECT dp.DPRO_C_CODIGO,DPRO_N_CANTIDAD,dp.DPRO_N_PRECIO,CONCAT(dp.DPRO_D_NOMBRE,'-',p.PRO_D_NOMBRE)  AS NOMBRE from dg_detalleProductos dp INNER JOIN dg_productos p on p.PRO_C_CODIGO=dp.PRO_C_CODIGO where CONCAT(dp.DPRO_D_NOMBRE,'-',p.PRO_D_NOMBRE) LIKE '%".$txt."%' LIMIT 12; ";
+                $sql="SELECT dp.DPRO_C_CODIGO,DPRO_N_CANTIDAD,dp.DPRO_N_PRECIO,CONCAT(tp.TDP_D_NOMBRE,' ',dp.DPRO_D_NOMBRE,'-',p.PRO_D_NOMBRE)  AS NOMBRE from dg_detalleProductos dp 
+                        INNER JOIN dg_productos p on p.PRO_C_CODIGO=dp.PRO_C_CODIGO 
+                        inner join dg_tipodetalleproducto tp on tp.TDP_C_CODIGO=dp.TDP_C_CODIGO
+                        where CONCAT(tp.TDP_D_NOMBRE,' ',dp.DPRO_D_NOMBRE,'-',p.PRO_D_NOMBRE) LIKE '%".$txt."%' LIMIT 12; ";
                 $rows=$this->db->query($sql);  
                 return $rows;
     }

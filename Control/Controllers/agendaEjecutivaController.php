@@ -3,7 +3,7 @@ if(isset($_SESSION['usuario'])) {
 
 	if(!empty($_POST['evento']))
 		{
-
+$ms='';
 			$evento=$_POST['evento'];
 
 			switch ($evento) {

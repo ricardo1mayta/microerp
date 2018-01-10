@@ -3,7 +3,7 @@
 <script >
 $(document).ready(function(){
 buscar();
-
+$('#pagina').text('pagina 1 de ');
 });
 
 
@@ -70,6 +70,7 @@ buscar();
                ini=(tot-aux);
             }
            }
+            $('#pagina').text('pagina '+((ini/10)+1)+' de ');
           $('#acumulador').val(ini);
           } else {
             $('#acumulador').val(0);
@@ -193,7 +194,7 @@ function contadores(){
                       </thead>
                       <tbody></tbody>
                      </table> 
-                     
+                     <label id="pagina"></label> 
                      <div id="total">
                        
                      </div>          

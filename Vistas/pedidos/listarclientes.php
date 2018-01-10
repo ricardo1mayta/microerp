@@ -10,7 +10,7 @@ if($txt!=""){
 			$pro = new Pedidos();
 
                         $categoria=$pro->get_empresasclientes($txt,$u);
-                         echo $categoria->num_rows;
+                         //echo $categoria->num_rows;
                          while($row=$categoria->fetch_array()){ 
                          $dir=$row['DIRECCION'];
                          $nom=$row['EMP_D_RAZONSOCIAL'];  

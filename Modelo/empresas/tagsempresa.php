@@ -14,7 +14,7 @@ public function __construct()
    
 public function save_tagsempresa($idemp,$idus,$tag) 
 {  
-     $sql = "CALL spa_save_tagempresa('$idemp','$idus','$tag');";
+    $sql = "CALL spa_save_tagempresa('$idemp','$idus','$tag');";
         
        $rows=$this->db->query($sql);  
        $result=$rows->fetch_array();
