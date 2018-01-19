@@ -12,7 +12,7 @@
 							$cont=$_REQUEST["idcon"];
 							$con=new contactos();	
 							$co=$con->save_correo($cor,$cont,$tipo,$us);
-							echo $co[0].=" Telefono Guardado";
+							echo $co[0].=" Correo Guardado";
 									
 
 	

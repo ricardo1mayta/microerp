@@ -58,7 +58,7 @@ INNER JOIN dg_empresas c on c.EMP_C_CODIGO=p.EMP_C_CODIGO where p.US_C_CODIGO='$
     }
      public function get_pedidosall($us) 
     {
-                $sql="SELECT p.PED_C_CODIGO,c.EMP_D_RAZONSOCIAL,c.EMP_C_RUC,(SELECT SUM(DPE_N_CANTIDAD*DPE_N_PRECIO) FROM dg_detallepedidos where PED_C_CODIGO=p.PED_C_CODIGO) AS TOTAL,p.PED_E_ESTADO from dg_pedidos p
+                $sql="SELECT p.PED_C_CODIGO,c.EMP_D_RAZONSOCIAL,c.EMP_C_RUC,(SELECT SUM(DPE_N_CANTIDAD*DPE_N_PRECIO) FROM dg_detallepedidos where PED_C_CODIGO=p.PED_C_CODIGO) AS TOTAL,p.PED_E_ESTADO,p.PED_O_OSERVACION from dg_pedidos p
 INNER JOIN dg_empresas c on c.EMP_C_CODIGO=p.EMP_C_CODIGO where p.US_C_CODIGO='$us' order by p.PED_C_CODIGO desc limit 200;";
                 $rows=$this->db->query($sql);  
                 return $rows;
@@ -67,7 +67,7 @@ INNER JOIN dg_empresas c on c.EMP_C_CODIGO=p.EMP_C_CODIGO where p.US_C_CODIGO='$
     public function get_pedidos_cobranzas($us) 
     {
                 $sql="SELECT p.PED_C_CODIGO,c.EMP_D_RAZONSOCIAL,c.EMP_C_RUC,(SELECT SUM(DPE_N_CANTIDAD*DPE_N_PRECIO) FROM dg_detallepedidos where PED_C_CODIGO=p.PED_C_CODIGO) AS TOTAL from dg_pedidos p
-INNER JOIN dg_empresas c on c.EMP_C_CODIGO=p.EMP_C_CODIGO where  p.PED_E_ESTADO=3; ";
+INNER JOIN dg_empresas c on c.EMP_C_CODIGO=p.EMP_C_CODIGO where  p.PED_E_ESTADO=2; ";
                 $rows=$this->db->query($sql);  
                 return $rows;
 

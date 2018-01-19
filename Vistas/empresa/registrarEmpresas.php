@@ -438,7 +438,7 @@ function deletecontactoss(c){
     <section class="content-header">
     <?php  if(isset($sms)){ echo $sms; }?>
       <h1>
-        Administración del Sistema
+          Modulo: Ventas
         
       </h1>
      

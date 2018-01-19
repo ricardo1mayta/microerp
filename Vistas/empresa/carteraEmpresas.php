@@ -1,21 +1,25 @@
 <?php include_once(HTML_DIR . '/template/titulo.php'); ?>
 <?php include_once(HTML_DIR . '/template/links.php'); ?>
+<?php if(isset($_POST['codigo'])){ $idempresa=$_POST['codigo']; }else{ $idempresa=$idemp;} ?>
 <script >
  $(document).ready(function() {
   
   ocultar();
-cargar_contactos();
-cargarubigeo();
+  cargar_contactos();
+  cargarubigeo();
    
   });
-	function buscar(e){
-		var u=<?php echo $usuario['US_C_CODIGO']; ?>;
+
+
+	function buscartag(e){
+		var u=<?=$usuario['US_C_CODIGO']?>;
+
 
   var buscar=$("#text").val();
   var url="../Vistas/empresa/listartags.php";
  
-  $('#tag').html('<div  class="overlay" ><img src="../Public/img/Sistema/loading3.gif" alt="Loading..." width="25" height="25" />hola</div>')
-    $.ajax({
+ $('#tag').html('<div  class="overlay" ><img src="../Public/img/Sistema/loading3.gif" alt="Loading..." width="25" height="25" />hola</div>')
+  $.ajax({
            type: "GET",
            url: url,
            data: {txt: buscar,e: e,u: u}, // Adjuntar los campos del formulario enviado.
@@ -29,6 +33,7 @@ cargarubigeo();
            }
          });
   }
+ 
   function link(e,u,t){
   
 
@@ -472,7 +477,7 @@ var url="../Vistas/ejecutivas/guardarubigeo.php";
 
 }
 function cargarubigeo(){
-  var e=<?php echo $_POST['codigo'];?>;
+  var e=<?=$idempresa?>;
   var url="../Vistas/ejecutivas/cargarubigeo.php";
    $('#ubigeo').html('');
                   
@@ -518,7 +523,8 @@ function cargarubigeo(){
                 	<div class="box box-warning">
 				        <div class="box-header with-border">
 				          <?php 
-				          if(isset($_POST['codigo'])){ $idempresa=$_POST['codigo']; }else{$idempresa=$idemp;}
+
+				          
 				          	
 				            		$e=new Empresas(); 
 				            		$emp=$e->get_Empresasid($idempresa);
@@ -535,13 +541,13 @@ function cargarubigeo(){
 				          </div>
 				        </div>
 				        <div class="box-body">
-				      	 <form action="../detalleEmpresas/" method="POST">
+				      	 <form action="../carteraEmpresas/" method="POST">
 				          <div class="col-md-6"> 
 				          
 							<div class="form-group ">
 					            <label>RUC</label>
-					            <input type="text" class="form-control input-sm"   value="<?php echo $emp['EMP_C_RUC'];?>" disabled>
-					            <input type="hidden" class="form-control input-sm"  id="rucemp" name="rucemp" value="<?php echo $emp['EMP_C_RUC'];?>" placeholder="Ruc"  >
+					            <input type="text" class="form-control input-sm" id="rucemp" name="rucemp" value="<?php echo $emp['EMP_C_RUC'];?>" >
+					          
 					        </div>
 					        <div class="form-group ">
 					            <label>Razón Social</label>
@@ -635,7 +641,7 @@ function cargarubigeo(){
 						   	
 							<div class="col-md-12">
 								<div class="form-group">
-								<input type="text" name="text" id="text" class="form-control" onkeyup="buscar(<?php echo $idempresa; ?>)">
+								<input type="text" name="text" id="text" onkeyup="buscartag(<?=$idempresa?>)" class="form-control" >
 								</div>
 							</div>
 							<div class="form-group" id="tag">
@@ -945,6 +951,40 @@ function cargarubigeo(){
   </div>
   <!-- /.content-wrapper -->
  <?php include_once(HTML_DIR . '/template/footer.php'); ?>
+ <div class="modal" id="sectorr" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">Sector que falta Agregar</h4>
+      </div>
+      <div class="modal-body">
+        <form action="../carteraEmpresas/" method="post">
+           <?php 
+              $cate = new Cartera();
+                 $SECTOR1=$cate->get_sectorfaltaempresa($idempresa);
+                 while($sec=$SECTOR1->fetch_array()){  
+                     ?>
+                     <div class="checkbox">
+                      <label>
+                      <input type="checkbox" value="<?php echo $sec['PAR_C_CODIGO']?>" name="mine[]">
+                       <?php echo $sec['PAR_D_NOMBRE']?></label>
+                     </div>
+            <?php }?>
+          
+      </div>
+      <div class="modal-footer">
+          <input type="hidden" name="evento" value="sector">
+          <input type="hidden" name="idemp" value="<?php echo $emp['EMP_C_CODIGO']; ?>">
+          <input type="hidden" name="idemp" value="<?php echo $emp['EMP_C_CODIGO']; ?>">
+          <input type="submit"  class="btn btn-warning" value="Agregar">
+      </div>
+      </form>
+      </div> 
+    </div>
+  </div>
+</div>
+
 <div class="modal" id="addcontactos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">

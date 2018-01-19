@@ -5,7 +5,7 @@ if(isset($_SESSION['usuario'])) {
 		{
 
 			$evento=$_POST['evento'];
-
+$ms="";
 			switch ($evento) {
 				case 'actualizar':
 
@@ -88,12 +88,14 @@ if(isset($_SESSION['usuario'])) {
 					
 					$idemp=$_POST['idemp'];
 					
-
+$p="";
+$sms="";
+$ms="";
 					if($id!=""){
 							foreach ($id as $i => $fila) {
 								
 							$car=new Cartera();
-							if($car->save_cartera($idemp,$idus,$id[$i])){
+							if($car->save_cartera($idemp,$idusu,$id[$i])){
 								$ms=" Se Registro Correctamente  Los Tipo de Sector";
 
 								}
@@ -102,7 +104,7 @@ if(isset($_SESSION['usuario'])) {
 
 							$sms='<div id="mensage" class="alert alert-success alert-dismissible">
 			                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-			                            <h4><i class="icon fa fa-check"></i>'.$p['sms'].' </h4>'.$ms.' Sin Problemas, Gracias.</div>';
+			                            <h4><i class="icon fa fa-check"></i> </h4>'.$ms.' Sin Problemas, Gracias.</div>';
 						}else{
 										$sms=' <div id="mensage" class="alert alert-danger alert-dismissible">
 			                              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>

@@ -20,7 +20,7 @@ if(isset($_SESSION['usuario'])) {
 								$p=$prod->save_detproducto($idpro,$nombre,$cantidad,$precio,$dtp,$um,$lg,$an,$ubi);
 									if($p['sms']=='ok'){
 										  // $url="../Vistas/registro_secciones.php?nom=".$nomproy;
-										 $sms='<div id="mensage" class="alert alert-success alert-dismissible">
+										 $sms='<div id="mensage" class="alert alert-success alert-dismissible">0
 			                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 			                            <h4><i class="icon fa fa-check"></i>'.$p['sms'].' </h4> Sin Problemas, Gracias.</div>';
 									}

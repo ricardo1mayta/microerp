@@ -49,9 +49,6 @@ require('Modelo/agenda/agenda.php');
 require('Modelo/agenda/tipoagenda.php');
 require('Modelo/chat/chats.php');
 require('Modelo/productos/tipodetalleProducto.php');
-
-
-
-
+require('Modelo/reportes/rankingventas.php');
 
 ?>

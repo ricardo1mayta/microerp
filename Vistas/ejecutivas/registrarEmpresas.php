@@ -142,10 +142,7 @@ function contadores(){
     <!-- Content Header (Page header) -->
     <section class="content-header">
     <?php  if(isset($sms)){ echo $sms; }?>
-      <h1>
-        Administración del Sistema
-        
-      </h1>
+      <h1>Modulo: Ventas</h1>
      
     </section>
 

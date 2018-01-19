@@ -18,10 +18,10 @@ $p = new Pedidos();
 
        <td  onclick="verdetallepedido(<?=$lista[0]?>,<?=$lista[0]?>,'<?=$lista[1]?>')"><i class="fa fa-mail-forward" data-toggle="modal" data-target="#detallepedido"  data-toggle="tooltip" title="Detalle"></i></td>
        <td><label class="">
-        <input type="checkbox" value="3" onChange="" >Orden Pedido</label><br>
+        <input type="checkbox" value="3" onChange="requisitos(this,6)">Orden Pedido</label><br>
         <label class="">
         <input type="checkbox" value="3" onChange="" >Contrato</label></td>
-       <td onclick="obs(<?=$lista[0]?>,2)"><i class="fa  fa-thumbs-up btn btn-success"  data-toggle="tooltip" title="Finalizar Requisitos"></i></td>
-       
+       <td onclick="obs(<?=$lista[0]?>,3)"><i class="fa  fa-thumbs-up btn btn-success"  data-toggle="tooltip" title="Finalizar Requisitos"></i></td>
+        <td onclick="obs(<?=$lista[0]?>,0)"><i class="fa fa-thumbs-down btn btn-danger"  data-toggle="tooltip" title="Baja de Venta"></i></td>       
      </tr>
      <?php } ?>

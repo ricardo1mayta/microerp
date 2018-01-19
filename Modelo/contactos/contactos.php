@@ -152,7 +152,7 @@ public function get_destrito($id){
       return $rows;
     }
 public function save_ubigeo($idparis,$idest,$idprov,$iddis,$idus,$idemp){
-     echo  $sql = "call spu_save_ubigeo('$idparis','$idest','$idprov','$iddis','$idus','$idemp');";
+      $sql = "call spu_save_ubigeo('$idparis','$idest','$idprov','$iddis','$idus','$idemp');";
       $rows=$this->db->query($sql);   
       $result=$rows->fetch_array();    
       return $result;
@@ -172,7 +172,7 @@ public function get_contacto($idemp){
   $sql = "SELECT c.CON_C_CODIGO,CONCAT(c.CON_D_NOMBRE,' ',c.CON_D_APELLIDO,'---',ca.CAR_D_NOMBRE) as CONTACTO FROM dg_contactos c
     INNER JOIN  dg_cargos ca on ca.CAR_C_CODIGO=c.CAR_C_CODIGO 
     INNER JOIN dg_detalleempresacontactos d on d.CON_C_CODIGO=c.CON_C_CODIGO
-    WHERE d.EMP_C_CODIGO='$idemp';"; 
+    WHERE c.CON_E_ESTADO>0 AND d.EMP_C_CODIGO='$idemp';"; 
       $rows=$this->db->query($sql);   
           
       return $rows;

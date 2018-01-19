@@ -119,9 +119,9 @@ var url="../Vistas/ejecutivas/paginacionuser.php"; // El script a dónde se real
           <!-- general form elements disabled -->
           <div class="box box-warning">
             <div class="box-header with-border">
-              <h3 class="box-title">Registro de Empresas</h3>
+              <h3 class="box-title">Cartera de Empresas</h3>
               <div class="box-tools pull-right">
-               <button type="button" class="btn btn-success" data-toggle="modal" data-target="#agregarEmpresas" ><i class="fa fa-plus"></i> Solicitar</button>
+              
                
               </div>
               

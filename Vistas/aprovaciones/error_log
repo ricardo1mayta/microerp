@@ -1,5 +1,0 @@
-[01-Jun-2017 16:27:58 America/Lima] PHP Fatal error:  Class 'DetallePedidos' not found in /home/grupodig/public_html/sys/Vistas/aprovaciones/aprovar.php on line 11
-[01-Jun-2017 16:30:22 America/Lima] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/grupodig/public_html/sys/Modelo/pedidos/pedidos.php on line 60
-[01-Jun-2017 16:30:35 America/Lima] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/grupodig/public_html/sys/Modelo/pedidos/pedidos.php on line 60
-[01-Jun-2017 16:31:28 America/Lima] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/grupodig/public_html/sys/Modelo/pedidos/pedidos.php on line 60
-[01-Jun-2017 16:33:26 America/Lima] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/grupodig/public_html/sys/Modelo/pedidos/pedidos.php on line 60

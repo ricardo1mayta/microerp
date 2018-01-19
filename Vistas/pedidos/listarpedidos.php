@@ -257,7 +257,7 @@ if( file!=""){
     <!-- Content Header (Page header) -->
     <section class="content-header">
     <?php  if(isset($sms)){ echo $sms; }?>
-      <h1>Nuevo Pedido</h1>
+      <h1>Modulo: Ventas</h1>
      <input type="hidden" id="usco" value="<?=$user['US_C_CODIGO'] ?>">
      <input type="hidden" id="idemp" >
      
@@ -274,7 +274,7 @@ if( file!=""){
           <!-- general form elements disabled -->
           <div class="box box-warning">
             <div class="box-header with-border">
-              <h3 class="box-title">Datos de Productos</h3>
+              <h3 class="box-title">Lista de Pedidos Por Validar</h3>
               <div class="box-tools pull-right">              
                <button type="button" class="btn btn-box-tool" data-toggle="modal"  ><i class="fa fa-minus"></i> </button>
                 <button type="button" class="btn btn-box-tool" data-toggle="modal"><i class="fa fa-remove"></i></button>
@@ -325,7 +325,7 @@ if( file!=""){
             <div class="box-body">
               <form class="form-horizontal" action=""  method="post" id="validapedidoarchivo" onsubmit="validapedido(); return false;" enctype="multipart/form-data" >
              <input type="file" name="archivo" id="archivo">
-             <input type="input" name="idped" id="">
+             <input type="hidden" name="idped" id="">
              <input type="hidden" name="u" id="u" value="<?=$user['US_C_CODIGO'] ?>">
             </div>
             <div class="box-footer ">

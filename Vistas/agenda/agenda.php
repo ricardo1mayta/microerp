@@ -92,7 +92,7 @@ function rep(){
     <section class="content-header">
      <?php  if(isset($sms)){ echo $sms; }?>
       <h1>
-       Agenda
+       Modulo: Ventas
         <small></small>
          
       </h1>

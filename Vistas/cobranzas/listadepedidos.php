@@ -125,11 +125,12 @@ var user=0;
              });
 
 }
-function requisitos(){
+function requisitos(r,g){
 var user=0;
    
       var url="../Vistas/cobranzas/requisitos.php";
     //$('#tablajson tbody').html('');
+    /*
         $.ajax({
                type: "GET",
                url: url,
@@ -143,7 +144,7 @@ var user=0;
 
                      
                }
-             });
+             });*/
 
 }
 
@@ -156,7 +157,7 @@ var user=0;
     <!-- Content Header (Page header) -->
     <section class="content-header">
     <?php  if(isset($sms)){ echo $sms; }?>
-      <h1>Nuevo Pedido</h1>
+      <h1>Modulo: Cobranza</h1>
      <input type="hidden" id="usco" value="<?=$user['US_C_CODIGO'] ?>">
      <input type="hidden" id="idemp" >
      
@@ -173,7 +174,7 @@ var user=0;
           <!-- general form elements disabled -->
           <div class="box box-warning">
             <div class="box-header with-border">
-              <h3 class="box-title">Datos de Productos</h3>
+              <h3 class="box-title">Lista de pedidos sin requisitos</h3>
               <div class="box-tools pull-right">              
                <button type="button" class="btn btn-box-tool" data-widget="collapse"  ><i class="fa fa-minus"></i> </button>
                 <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>

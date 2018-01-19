@@ -1,8 +1,0 @@
-[15-May-2017 16:32:23 America/Lima] PHP Fatal error:  Class 'Pedidos' not found in /home/grupodig/public_html/sys/Vistas/contactos/tipocontacto.php on line 10
-[15-May-2017 17:33:35 America/Lima] PHP Warning:  Unterminated comment starting line 2 in /home/grupodig/public_html/sys/Vistas/contactos/tipocontacto.php on line 2
-[15-May-2017 17:36:59 America/Lima] PHP Warning:  Unterminated comment starting line 2 in /home/grupodig/public_html/sys/Vistas/contactos/tipocontacto.php on line 2
-[15-May-2017 17:37:15 America/Lima] PHP Warning:  Unterminated comment starting line 2 in /home/grupodig/public_html/sys/Vistas/contactos/tipocontacto.php on line 2
-[15-May-2017 17:44:17 America/Lima] PHP Fatal error:  Class 'Pedidos' not found in /home/grupodig/public_html/sys/Vistas/contactos/tipocontacto.php on line 11
-[15-May-2017 17:44:24 America/Lima] PHP Fatal error:  Class 'Pedidos' not found in /home/grupodig/public_html/sys/Vistas/contactos/tipocontacto.php on line 11
-[15-May-2017 17:58:41 America/Lima] PHP Fatal error:  Cannot use object of type mysqli_result as array in /home/grupodig/public_html/sys/Vistas/contactos/tipocontacto.php on line 13
-[15-May-2017 17:58:50 America/Lima] PHP Fatal error:  Cannot use object of type mysqli_result as array in /home/grupodig/public_html/sys/Vistas/contactos/tipocontacto.php on line 13

@@ -12,7 +12,7 @@
 							$idcon=$_REQUEST["idcon"];
 							$con=new contactos();	
 							$co=$con->save_telefono($tel,$tipo,$idcon,$idusu);
-							echo $ms.="Telefono Guardado";
+							echo "Telefono Guardado";
 									
 
 	
